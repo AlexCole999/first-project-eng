@@ -9,11 +9,6 @@ function App(props) {
       <Navbar />
       <Dashboard />
       <Footer />
-      <button onClick={() => {
-        console.log(props.store);
-        console.log(props.store.getState());
-        props.store.dispatch({ type: "ACTION1" })
-      }}>123</button>
     </div>
   );
 }
