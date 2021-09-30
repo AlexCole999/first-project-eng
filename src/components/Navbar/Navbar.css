@@ -1,0 +1,14 @@
+.Navbar{
+  grid-area: Navbar;
+  min-height: 150px;
+  background-color: rgb(192, 208, 223);
+  display: flex;
+  justify-content: space-between;
+}
+.Navbar-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 45vw;
+  min-height: 100px;
+}

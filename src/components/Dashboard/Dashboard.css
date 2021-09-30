@@ -1,0 +1,9 @@
+.Dashboard{
+  grid-area: Dashboard;
+  background-color: rgb(231, 233, 235);
+  min-height: 700px;
+  text-align: start;
+}
+.Dashboard-content{
+  padding: 25px;
+}
