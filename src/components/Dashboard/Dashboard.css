@@ -7,3 +7,9 @@
 .Dashboard-content{
   padding: 25px;
 }
+.jsonplaceholder{
+  margin-top: 50px;
+}
+.jsonplaceholder__input{
+  padding: 8px;
+}

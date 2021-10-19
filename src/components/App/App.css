@@ -1,9 +1,9 @@
 .App{
   display: grid;
   grid-template-areas: 
-          "Navbar Navbar Navbar"
-          "Dashboard Dashboard Dashboard"
-          "Footer Footer Footer";
+          "Navbar"
+          "Dashboard"
+          "Footer";
 
   grid-template-rows: 150px 1fr 150px;
   grid-template-columns: 1fr;
