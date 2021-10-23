@@ -34,7 +34,12 @@ export default function Dashboard() {
               }
             }
           />
-          <div className="mainTranslate">{yandex.def.length ? `${toUpperCase(yandex.def[0].tr[0].text)}` : "Нет в словаре"}</div><br />
+          <div className="mainTranslate">
+            {yandex.code !== 502
+              ? (yandex.def.length ? `${toUpperCase(yandex.def[0].tr[0].text)}` : "Нет в словаре")
+              : "Нет в словаре"}
+          </div>
+          <br />
           <br />
           <YandexVocabulary data={yandex} />
         </div>
