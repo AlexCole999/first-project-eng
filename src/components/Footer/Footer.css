@@ -1,4 +1,7 @@
 .Footer{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   grid-area: Footer;
   background-color: rgba(8, 10, 12, 0.521);
   height: 100%;
@@ -6,5 +9,5 @@
 }
 .Footer-word{
   padding: 25px;
-
+  font-size: 13px;
 }

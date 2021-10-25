@@ -8,6 +8,7 @@
 .Navbar-container{
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   align-items: center;
   width: 45vw;
   min-height: 100px;
