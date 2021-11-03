@@ -1,11 +1,16 @@
+.navbar-container{
+  display: flex;
+  justify-content: center;
+  background-color: rgb(192, 208, 223);
+}
 .Navbar{
   grid-area: Navbar;
   min-height: 150px;
-  background-color: rgb(192, 208, 223);
+  min-width: 1200px;
   display: flex;
   justify-content: space-between;
 }
-.Navbar-container{
+.Navbar-right{
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;

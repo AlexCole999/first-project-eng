@@ -1,6 +1,6 @@
 .YandexVocabulary{
   display: flex;
   justify-content: start;
-  align-items: stretch;
+  flex-wrap: wrap;
   margin-top: 5px;
 }

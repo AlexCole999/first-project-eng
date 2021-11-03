@@ -1,8 +1,13 @@
+.dashboard-container{
+  display: flex;
+  justify-content: center;
+  background-color: rgb(231, 233, 235);
+}
 .Dashboard{
   grid-area: Dashboard;
-  background-color: rgb(231, 233, 235);
   min-height: 700px;
   text-align: start;
+  width: 1200px;
 }
 .Dashboard-content{
   padding: 15px 25px;

@@ -22,30 +22,32 @@ export default function Dashboard() {
     else setyandex({ head: {}, def: [] });
   }
   return (
-    <div className="Dashboard">
-      <div className="Dashboard-content">
-        <div className="wordSearch">
-          <div>Введите слово для поиска:</div>
-          <input className="wordSearch__input"
-            type="text"
-            onChange={
-              (e) => {
-                yandexDictionaryRequest(e.target.value);
+    <div className="dashboard-container">
+      <div className="Dashboard">
+        <div className="Dashboard-content">
+          <div className="wordSearch">
+            <div>Введите слово для поиска:</div>
+            <input className="wordSearch__input"
+              type="text"
+              onChange={
+                (e) => {
+                  yandexDictionaryRequest(e.target.value);
+                }
               }
-            }
-          />
-          <div className="mainTranslate">
-            {yandex.code !== 502
-              ? (yandex.def.length ? `${toUpperCase(yandex.def[0].tr[0].text)}` : "Нет в словаре")
-              : "Нет в словаре"}
+            />
+            <div className="mainTranslate">
+              {yandex.code !== 502
+                ? (yandex.def.length ? `${toUpperCase(yandex.def[0].tr[0].text)}` : "Нет в словаре")
+                : "Нет в словаре"}
+            </div>
+            <br />
+            <br />
+            <YandexVocabulary data={yandex} />
           </div>
-          <br />
-          <br />
-          <YandexVocabulary data={yandex} />
+          <button onClick={() => console.log(yandex)}></button>
         </div>
-        <button onClick={() => console.log(yandex)}></button>
-      </div>
 
-    </div >
+      </div >
+    </div>
   )
 }
