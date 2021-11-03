@@ -9,7 +9,7 @@ export default function YandexVocabulary(props) {
       Возможный перевод:
       <br />
       {props.data.code !== 502  /* <<<---Обработка пробелов */
-        ? (props.data.def.length > 0 ? props.data.def[0].tr.map(x => <SearchedTranslate some={toUpperCase(x.text)} key={x.text} />) : 'Других переводов не найдено')
+        ? (props.data.def.length > 0 ? props.data.def.map(x => <SearchedTranslate translates={x.tr} />) : 'Других переводов не найдено')
         : 'Других переводов не найдено'}
     </div>
   );
