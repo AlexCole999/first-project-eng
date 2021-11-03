@@ -6,7 +6,6 @@
 .Dashboard{
   grid-area: Dashboard;
   min-height: 700px;
-  text-align: start;
   width: 1200px;
 }
 .Dashboard-content{

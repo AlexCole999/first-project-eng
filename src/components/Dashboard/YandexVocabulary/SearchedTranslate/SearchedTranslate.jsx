@@ -8,22 +8,23 @@ export default function SearchedTranslate(props) {
     <div className="SearchedTranslate">
       <div>
         <div className="SearchedTranslate__pos">
-          {props.pos == "noun" ? "Существительное"
-            : props.pos == "verb" ? "Глагол"
-              : props.pos == "adjective" ? "Прилагательное"
-                : props.pos == "pronoun" ? "Местоимение"
-                  : props.pos == "adverb" ? "Наречие"
-                    : props.pos == "preposition" ? "Предлог"
-                      : props.pos == "foreign word" ? "Иностранное слово"
-                        : props.pos == "participle" ? "Причастие"
-                          : props.pos == "particle" ? "Частица"
-                            : props.pos == "interjection" ? "Междометие"
-                              : props.pos == "numeral" ? "Числительное"
-                                : props.pos}
+          {props.pos === "noun" ? "Существительное"
+            : props.pos === "verb" ? "Глагол"
+              : props.pos === "adjective" ? "Прилагательное"
+                : props.pos === "pronoun" ? "Местоимение"
+                  : props.pos === "adverb" ? "Наречие"
+                    : props.pos === "preposition" ? "Предлог"
+                      : props.pos === "foreign word" ? "Иностранное слово"
+                        : props.pos === "participle" ? "Причастие"
+                          : props.pos === "particle" ? "Частица"
+                            : props.pos === "interjection" ? "Междометие"
+                              : props.pos === "numeral" ? "Числительное"
+                                : props.pos === "predicative" ? "Предикатив"
+                                  : props.pos}
         </div>
         {props.translates.map(
           x =>
-            <div className="translatedElement">
+            <div className="translatedElement" key={x.text}>
               <div>{toUpperCase(x.text)}</div>
               <AiFillCheckCircle
                 style={{ color: "grey", width: "20px", height: '20px' }}
