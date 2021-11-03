@@ -13,6 +13,7 @@
   min-width: 1200px;
 }
 .Footer-word{
-  padding: 25px;
-  font-size: 13px;
+  font-size: 15px;
+  font-weight: 700;
+  font-style: italic;
 }

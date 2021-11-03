@@ -3,9 +3,10 @@ import './Logo.css'
 
 export default function Logo() {
   return (
+
     <div className="Logo">
       <div className="Logo-word">
-        ENGLISH
+        <a href="/">ENGLISH</a>
       </div>
     </div>
   )

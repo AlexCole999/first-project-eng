@@ -5,14 +5,14 @@
 }
 .Dashboard{
   grid-area: Dashboard;
-  min-height: 700px;
+  min-height: 680px;
   width: 1200px;
 }
 .Dashboard-content{
-  padding: 15px 25px;
+  padding: 25px 15px;
 }
 .wordSearch__input{
-margin-top: 7px;
+  margin-top: 7px;
   padding: 10px;
   width: 200px;
   border:1px solid rgb(107, 102, 102);
