@@ -1,7 +1,7 @@
 .dashboard-container{
   display: flex;
   justify-content: center;
-  background-color: rgb(231, 233, 235);
+  background-color: rgb(236, 238, 240);
 }
 .Dashboard{
   grid-area: Dashboard;
