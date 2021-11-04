@@ -40,10 +40,9 @@ export default function Dashboard() {
                 ? (yandex.def.length ? `${toUpperCase(yandex.def[0].tr[0].text)}` : "Нет в словаре")
                 : "Нет в словаре"}
             </div>
-            <br />
-            <br />
-            <YandexVocabulary data={yandex} />
+
           </div>
+          <YandexVocabulary data={yandex} />
           <button onClick={() => console.log(yandex)}></button>
         </div>
 
