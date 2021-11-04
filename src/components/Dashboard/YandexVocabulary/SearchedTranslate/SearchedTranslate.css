@@ -1,7 +1,6 @@
 .SearchedTranslate{
   font-weight: bold;
   border: 2px solid grey;
-  min-width: 250px;
   min-height: 100px;
   padding: 15px;
   margin-top: 5px;
@@ -27,6 +26,7 @@
   width: 35px;
   height: 35px;
   transition: linear 0.1s;
+  margin-left: 50px;
 }
 .AiFillCheckCircle:hover{
   color:rgb(129, 182, 7);

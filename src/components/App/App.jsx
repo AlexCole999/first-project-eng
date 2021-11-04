@@ -1,8 +1,7 @@
-import Dashboard from '../Dashboard/Dashboard';
-import Footer from '../Footer/Footer';
-import './App.css';
 import React from 'react';
-import Logo from './Logo/Logo';
+import './App.css';
+import YandexVocabulary from './../Dashboard/YandexVocabulary/YandexVocabulary';
+import Footer from '../Footer/Footer';
 import { AiOutlineFileSearch } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
 import { AiOutlineHdd } from "react-icons/ai";
@@ -13,7 +12,11 @@ function App(props) {
     <div className="App">
       <div className="navbar-container">
         <div className="Navbar">
-          <Logo />
+          <div className="Logo">
+            <div className="Logo-word">
+              <a href="/">ENGLISH</a>
+            </div>
+          </div>
           <div className="Navbar-right">
             <a href="/" className="Navbar-right-elem" title="Искать слова"><AiOutlineFileSearch style={{ width: "55px", height: "55px" }} /></a>
             <a href="/" className="Navbar-right-elem" title="Добавленные слова"><AiOutlineHdd style={{ width: "55px", height: "55px" }} /></a>
@@ -22,7 +25,14 @@ function App(props) {
           </div>
         </div>
       </div>
-      <Dashboard />
+      <div className="dashboard-container">
+        <div className="Dashboard">
+          <div className="Dashboard-content">
+            <YandexVocabulary />
+            <button onClick={() => console.log(1)}></button>
+          </div>
+        </div >
+      </div>
       <Footer />
     </div>
   );
