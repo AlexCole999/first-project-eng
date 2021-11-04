@@ -20,9 +20,11 @@
 a{
   text-decoration: none;
   color:rgb(41, 9, 99);
+  transition: linear 0.1s;
 }
 a:hover{
   color:rgb(34, 85, 224);
+  transform:scale(1.1) ;
 }
 a:active{
   color:rgb(177, 58, 201)
