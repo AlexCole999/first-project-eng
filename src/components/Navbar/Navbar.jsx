@@ -14,9 +14,9 @@ export default function Navbar() {
         <Logo />
         <div className="Navbar-right">
           <a href="/" title="Искать слова"><AiOutlineFileSearch style={{ width: "55px", height: "55px" }} /></a>
-          <a href="/" title="Список добавленных"><AiOutlineHdd style={{ width: "55px", height: "55px" }} /></a>
-          <a href="/" title="Учить и развиваться"><AiOutlineFund style={{ width: "55px", height: "55px" }} /></a>
-          <a href="/" title="Настройки профиля"><AiOutlineSetting style={{ width: "55px", height: "55px" }} /></a>
+          <a href="/" title="Добавленные слова"><AiOutlineHdd style={{ width: "55px", height: "55px" }} /></a>
+          <a href="/" title="Учить (Мой прогресс)"><AiOutlineFund style={{ width: "55px", height: "55px" }} /></a>
+          <a href="/" title="Настройки (Профиль)"><AiOutlineSetting style={{ width: "55px", height: "55px" }} /></a>
         </div>
       </div>
     </div>
