@@ -20,14 +20,17 @@ export default function SearchedTranslate(props) {
                             : props.pos === "interjection" ? "Междометие"
                               : props.pos === "numeral" ? "Числительное"
                                 : props.pos === "predicative" ? "Предикатив"
-                                  : props.pos}
+                                  : props.pos === "conjunction" ? "Союз"
+                                    : props.pos === "parenthetic" ? "Вводное"
+                                      : props.pos}
+
         </div>
         {props.translates.map(
           x =>
             <div className="translatedElement" key={x.text}>
               <div>{toUpperCase(x.text)}</div>
               <AiFillCheckCircle
-                style={{ color: "grey", width: "20px", height: '20px' }}
+                className="AiFillCheckCircle"
                 onClick={(e) => { console.log(e.target.style.color); e.target.style.color = 'green' }} />
             </div>)}
       </div>
