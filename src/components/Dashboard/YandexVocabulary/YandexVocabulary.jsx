@@ -38,8 +38,8 @@ export default function YandexVocabulary(props) {
             ? (yandex.def.length ? `${toUpperCase(yandex.def[0].tr[0].text)}` : "Нет в словаре")
             : "Нет в словаре"}
         </div>
-
       </div>
+      <hr />
       <div className="YandexVocabulary">
         {yandex.code !== 502  /* <<<---Обработка пробелов */
           ? (yandex.def.length > 0 ? yandex.def.map(x => <SearchedTranslate pos={x.pos} translates={x.tr} key={x.pos} />) : 'Других переводов не найдено')
