@@ -11,7 +11,6 @@ export default function Dashboard() {
           <YandexVocabulary />
           <button onClick={() => console.log(1)}></button>
         </div>
-
       </div >
     </div>
   )
