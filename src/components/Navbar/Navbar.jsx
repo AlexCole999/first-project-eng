@@ -6,7 +6,6 @@ import { AiOutlineUser } from "react-icons/ai"
 import { AiOutlineHdd } from "react-icons/ai"
 import { AiOutlineFund } from "react-icons/ai"
 
-
 export default function Navbar() {
   return (
     <div className="navbar-container">
