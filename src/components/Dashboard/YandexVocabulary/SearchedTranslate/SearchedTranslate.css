@@ -2,7 +2,7 @@
   font-weight: bold;
   border: 2px solid grey;
   min-width: 250px;
-  min-height: 200px;
+  min-height: 100px;
   padding: 15px;
   margin-top: 5px;
   margin-right: 10px;
@@ -24,7 +24,7 @@
   color:grey;
   width: 25px;
   height: 25px;
-  transition: linear 0.2s;
+  transition: linear 0.13s;
 }
 .AiFillCheckCircle:hover{
   color:rgb(129, 182, 7);
