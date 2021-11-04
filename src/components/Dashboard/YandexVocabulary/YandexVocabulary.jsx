@@ -23,8 +23,8 @@ export default function YandexVocabulary(props) {
   }
   return (
     <div>
+      <div>Введите слово для поиска:</div>
       <div className="wordSearch">
-        <div>Введите слово для поиска:</div>
         <input className="wordSearch__input"
           type="text"
           onChange={

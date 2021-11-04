@@ -4,3 +4,20 @@
   flex-wrap: wrap;
   margin-top: 25px;
 }
+.wordSearch{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.wordSearch__input{
+  margin-top: 7px;
+  padding: 10px;
+  width: 200px;
+  border:1px solid rgb(107, 102, 102);
+  border-radius: 5px;
+}
+.mainTranslate{
+  margin-left: 15px;
+  font-weight: bold;
+  font-size:25px;
+}

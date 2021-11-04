@@ -18,13 +18,18 @@
 }
 
 a{
-  text-decoration: none;
-  color:rgb(41, 9, 99);
+   text-decoration: none;
+}
+.Navbar-right-elem{
+  background-color: rgb(192, 208, 223);
+  border-radius: 50%;
+  color:rgb(40, 6, 104);
   transition: linear 0.1s;
 }
-a:hover{
+.Navbar-right-elem:hover{
   color:rgb(34, 85, 224);
   transform:scale(1.1) ;
+  background-color: #fff;
 }
 a:active{
   color:rgb(177, 58, 201)
