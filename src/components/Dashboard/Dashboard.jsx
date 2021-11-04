@@ -7,7 +7,6 @@ export default function Dashboard() {
     <div className="dashboard-container">
       <div className="Dashboard">
         <div className="Dashboard-content">
-
           <YandexVocabulary />
           <button onClick={() => console.log(1)}></button>
         </div>

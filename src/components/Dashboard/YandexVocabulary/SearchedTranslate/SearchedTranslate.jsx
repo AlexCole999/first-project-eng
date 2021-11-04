@@ -31,7 +31,7 @@ export default function SearchedTranslate(props) {
               <div>{toUpperCase(x.text)}</div>
               <AiFillCheckCircle
                 className="AiFillCheckCircle"
-                onMouseDown={(e) => { e.target.style.color == 'green' ? e.target.style.color = "grey" : e.target.style.color = 'green' }} />
+                onMouseDown={(e) => { e.target.style.color === 'green' ? e.target.style.color = "grey" : e.target.style.color = 'green' }} />
             </div>)}
       </div>
     </div>
