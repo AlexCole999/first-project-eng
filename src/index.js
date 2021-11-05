@@ -4,6 +4,7 @@ import './index.css';
 import App from './components/App/App.jsx';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from "react-router-dom";
 
 
 const Reducer = (state = 1, action) => {
@@ -22,9 +23,11 @@ let store = createStore(Reducer);
 
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>
+  <BrowserRouter>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </BrowserRouter>
   ,
   document.getElementById('root')
 );
