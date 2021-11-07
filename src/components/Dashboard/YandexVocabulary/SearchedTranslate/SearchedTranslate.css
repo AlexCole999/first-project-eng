@@ -4,8 +4,9 @@
   min-height: 100px;
   padding: 15px;
   margin-top: 5px;
-  margin-right: 10px;
   border-radius: 15px;
+  flex-grow: 1;
+  margin: 5px;
 }
 .SearchedTranslate__pos{
   margin-bottom: 15px;
