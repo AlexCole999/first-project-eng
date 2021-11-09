@@ -1,6 +1,6 @@
 import React from 'react';
 import './SearchedTranslate.css';
-import toUpperCase from '../../../functionsForComponents/toUpperCase';
+import toUpperCase from '../../../../functionsForComponents/toUpperCase';
 import { AiFillCheckCircle } from "react-icons/ai";
 
 export default function SearchedTranslate(props) {

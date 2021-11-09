@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SearchedTranslate from './SearchedTranslate/SearchedTranslate';
 import './YandexVocabulary.css';
-import toUpperCase from '../../functionsForComponents/toUpperCase';
+import toUpperCase from '../../../functionsForComponents/toUpperCase';
 
 export default function YandexVocabulary(props) {
   const [yandex, setyandex] = useState({ head: {}, def: [] });
