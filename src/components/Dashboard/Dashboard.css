@@ -1,0 +1,74 @@
+.App{
+  display: grid;
+  grid-template-areas: 
+          "Navbar"
+          "Dashboard"
+          "Footer";
+
+  grid-template-rows: 150px 1fr 150px;
+  grid-template-columns: 1fr;
+  grid-gap: 0px;
+}
+.navbar-container{
+  display: flex;
+  justify-content: center;
+  background-color: rgb(147, 184, 214);
+}
+.Navbar{
+  grid-area: Navbar;
+  min-height: 150px;
+  min-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+}
+.Navbar-right{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+}
+
+a{
+   text-decoration: none;
+   color:rgb(32, 4, 83);
+}
+.Navbar-right-elem{
+  background-color: rgb(192, 208, 223);
+  border-radius: 50%;
+  color:rgb(32, 4, 83);
+  transition: linear 0.1s;
+}
+.Navbar-right-elem:hover{
+  color:rgb(34, 85, 224);
+  transform:scale(1.1) ;
+  background-color: #fff;
+}
+a:active{
+  color:rgb(177, 58, 201)
+}
+
+.dashboard-container{
+  display: flex;
+  justify-content: center;
+  background-color: rgb(236, 238, 240);
+}
+.Dashboard{
+  grid-area: Dashboard;
+  min-height: 680px;
+  width: 1200px;
+}
+.Dashboard-content{
+  padding: 25px 15px;
+}
+
+.Logo{
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Logo-word{
+  font-size: 35px;
+  font-weight: 900;
+  color:black;
+}
