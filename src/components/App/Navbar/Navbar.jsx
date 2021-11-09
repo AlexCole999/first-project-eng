@@ -12,7 +12,7 @@ export default function Navbar() {
       <div className="Navbar">
         <div className="Logo">
           <div className="Logo-word">
-            <a href="/">ENGLISH</a>
+            <NavLink to={"/"}>ENGLISH</NavLink>
           </div>
         </div>
         <Routes>
