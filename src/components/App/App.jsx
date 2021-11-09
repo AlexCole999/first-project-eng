@@ -1,13 +1,10 @@
 import React from 'react';
 import './App.css';
-import YandexVocabulary from './../Dashboard/YandexVocabulary/YandexVocabulary';
-import Footer from '../Footer/Footer';
-import { AiOutlineFileSearch } from "react-icons/ai";
-import { AiOutlineUser } from "react-icons/ai";
-import { AiOutlineHdd } from "react-icons/ai";
-import { AiOutlineFund } from "react-icons/ai";
-import { Routes, Route, NavLink } from "react-router-dom";
 import Navbar from './Navbar/Navbar';
+import Footer from '../Footer/Footer';
+import YandexVocabulary from './../Dashboard/YandexVocabulary/YandexVocabulary';
+import { Routes, Route } from "react-router-dom";
+
 
 
 function App(props) {
@@ -18,6 +15,8 @@ function App(props) {
         <div className="Dashboard">
           <div className="Dashboard-content">
             <Routes>
+              <Route exact path="/" element={<div>Инструкция к применению</div>}>
+              </Route>
               <Route exact path="/addword" element={<YandexVocabulary />}>
               </Route>
               <Route exact path="/mywords" element={<div>Здесь будет список слов с сервера</div>}>
