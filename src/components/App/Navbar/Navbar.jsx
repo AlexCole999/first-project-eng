@@ -28,7 +28,7 @@ export default function Navbar() {
           <Route
             exact path="/addword"
             element={<div className="Navbar-right">
-              <NavLink to={"/addword"} style={{ border: "3px solid rgb(111, 111, 220)", backgroundColor: "white", color: "rgb(34, 85, 224)" }} className="Navbar-right-elem" title="Искать слова"><AiOutlineFileSearch style={{ width: "55px", height: "55px" }} /></NavLink>
+              <NavLink to={"/addword"} style={{ backgroundColor: "white", color: "rgb(34, 85, 224)" }} className="Navbar-right-elem" title="Искать слова"><AiOutlineFileSearch style={{ width: "55px", height: "55px" }} /></NavLink>
               <NavLink to={"/mywords"} className="Navbar-right-elem" title="Добавленные слова"><AiOutlineHdd style={{ width: "55px", height: "55px" }} /></NavLink>
               <NavLink to={"/progress"} className="Navbar-right-elem" title="Учить (Мой прогресс)"><AiOutlineFund style={{ width: "55px", height: "55px" }} /></NavLink>
               <NavLink to={"/profile"} className="Navbar-right-elem" title="Настройки (Профиль)"><AiOutlineUser style={{ width: "55px", height: "55px" }} /></NavLink>
@@ -38,7 +38,7 @@ export default function Navbar() {
             exact path="/mywords"
             element={<div className="Navbar-right">
               <NavLink to={"/addword"} className="Navbar-right-elem" title="Искать слова"><AiOutlineFileSearch style={{ width: "55px", height: "55px" }} /></NavLink>
-              <NavLink to={"/mywords"} style={{ border: "3px solid rgb(111, 111, 220)", backgroundColor: "white", color: "rgb(34, 85, 224)" }} className="Navbar-right-elem" title="Добавленные слова"><AiOutlineHdd style={{ width: "55px", height: "55px" }} /></NavLink>
+              <NavLink to={"/mywords"} style={{ backgroundColor: "white", color: "rgb(34, 85, 224)" }} className="Navbar-right-elem" title="Добавленные слова"><AiOutlineHdd style={{ width: "55px", height: "55px" }} /></NavLink>
               <NavLink to={"/progress"} className="Navbar-right-elem" title="Учить (Мой прогресс)"><AiOutlineFund style={{ width: "55px", height: "55px" }} /></NavLink>
               <NavLink to={"/profile"} className="Navbar-right-elem" title="Настройки (Профиль)"><AiOutlineUser style={{ width: "55px", height: "55px" }} /></NavLink>
             </div>}>
@@ -48,7 +48,7 @@ export default function Navbar() {
             element={<div className="Navbar-right">
               <NavLink to={"/addword"} className="Navbar-right-elem" title="Искать слова"><AiOutlineFileSearch style={{ width: "55px", height: "55px" }} /></NavLink>
               <NavLink to={"/mywords"} className="Navbar-right-elem" title="Добавленные слова"><AiOutlineHdd style={{ width: "55px", height: "55px" }} /></NavLink>
-              <NavLink to={"/progress"} style={{ border: "3px solid rgb(111, 111, 220)", backgroundColor: "white", color: "rgb(34, 85, 224)" }} className="Navbar-right-elem" title="Учить (Мой прогресс)"><AiOutlineFund style={{ width: "55px", height: "55px" }} /></NavLink>
+              <NavLink to={"/progress"} style={{ backgroundColor: "white", color: "rgb(34, 85, 224)" }} className="Navbar-right-elem" title="Учить (Мой прогресс)"><AiOutlineFund style={{ width: "55px", height: "55px" }} /></NavLink>
               <NavLink to={"/profile"} className="Navbar-right-elem" title="Настройки (Профиль)"><AiOutlineUser style={{ width: "55px", height: "55px" }} /></NavLink>
             </div>}>
           </Route>
@@ -58,7 +58,7 @@ export default function Navbar() {
               <NavLink to={"/addword"} className="Navbar-right-elem" title="Искать слова"><AiOutlineFileSearch style={{ width: "55px", height: "55px" }} /></NavLink>
               <NavLink to={"/mywords"} className="Navbar-right-elem" title="Добавленные слова"><AiOutlineHdd style={{ width: "55px", height: "55px" }} /></NavLink>
               <NavLink to={"/progress"} className="Navbar-right-elem" title="Учить (Мой прогресс)"><AiOutlineFund style={{ width: "55px", height: "55px" }} /></NavLink>
-              <NavLink to={"/profile"} style={{ border: "3px solid rgb(111, 111, 220)", backgroundColor: "white", color: "rgb(34, 85, 224)" }} className="Navbar-right-elem" title="Настройки (Профиль)"><AiOutlineUser style={{ width: "55px", height: "55px" }} /></NavLink>
+              <NavLink to={"/profile"} style={{ backgroundColor: "white", color: "rgb(34, 85, 224)" }} className="Navbar-right-elem" title="Настройки (Профиль)"><AiOutlineUser style={{ width: "55px", height: "55px" }} /></NavLink>
             </div>}>
           </Route>
         </Routes>
