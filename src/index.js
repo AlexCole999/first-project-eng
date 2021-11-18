@@ -21,15 +21,12 @@ const Reducer = (state = 1, action) => {
 
 let store = createStore(Reducer);
 
-
-
-ReactDOM.render(
+let app = (
   <BrowserRouter>
     <Provider store={store}>
       <App />
     </Provider>
-  </BrowserRouter>
-  ,
-  document.getElementById('root')
-);
+  </BrowserRouter>)
+
+ReactDOM.render(app, document.getElementById('root'));
 
