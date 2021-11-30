@@ -20,7 +20,6 @@ export default function Dashboard() {
             <Route exact path="/profile" element={<div>Здесь будет информация о профиле и настройки</div>}>
             </Route>
           </Routes>
-          <button onClick={() => console.log(1)}></button>
         </div>
       </div >
     </div>

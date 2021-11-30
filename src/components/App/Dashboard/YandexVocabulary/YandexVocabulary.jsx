@@ -37,12 +37,13 @@ export default function YandexVocabulary(props) {
           {yandex.code !== 502
             ? (yandex.def.length ? `${toUpperCase(yandex.def[0].tr[0].text)}` : "Нет в словаре")
             : "Нет в словаре"}
+          <button style={{ borderRadius: '50%', height: '15px' }} onClick={() => console.log(yandex)}></button>
         </div>
       </div>
       <hr />
       <div className="YandexVocabulary">
         {yandex.code !== 502  /* <<<---Обработка пробелов */
-          ? (yandex.def.length > 0 ? yandex.def.map(x => <SearchedTranslate pos={x.pos} translates={x.tr} key={x.pos} />) : 'Других переводов не найдено')
+          ? (yandex.def.length > 0 ? yandex.def.map(x => <SearchedTranslate pos={x.pos} translates={x.tr} key={x.pos} word={x.text} />) : 'Других переводов не найдено')
           : 'Других переводов не найдено'}
       </div>
     </div>
