@@ -6,7 +6,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from "react-router-dom";
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import { firebaseConfig } from './firebase/firebaseConfig';
 
 const Reducer = (state = 1, action) => {
   switch (action.type) {
@@ -19,6 +19,7 @@ const Reducer = (state = 1, action) => {
   }
 };
 
+const appfirebase = initializeApp(firebaseConfig);
 let store = createStore(Reducer);
 
 let app = (
