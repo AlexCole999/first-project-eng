@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import SearchedTranslate from './SearchedTranslate/SearchedTranslate';
-import './YandexVocabulary.css';
+import './AddWord.css';
 import toUpperCase from '../../../functionsForComponents/toUpperCase';
 
-export default function YandexVocabulary(props) {
-  const [yandex, setyandex] = useState({ head: {}, def: [] });
+export default function AddWord(props) {
+  const [yandexData, setYandexData] = useState({ head: {}, def: [] });
 
   function yandexDictionaryRequest(input) {
     if (input) {
@@ -14,12 +14,12 @@ export default function YandexVocabulary(props) {
         .then(x => {
           console.log("------------");
           console.log(x);
-          setyandex(x);
+          setYandexData(x);
         }
         );
 
     }
-    else setyandex({ head: {}, def: [] });
+    else setYandexData({ head: {}, def: [] });
   }
   return (
     <div>
@@ -34,16 +34,16 @@ export default function YandexVocabulary(props) {
           }
         />
         <div className="mainTranslate">
-          {yandex.code !== 502
-            ? (yandex.def.length ? `${toUpperCase(yandex.def[0].tr[0].text)}` : "Нет в словаре")
+          {yandexData.code !== 502
+            ? (yandexData.def.length ? `${toUpperCase(yandexData.def[0].tr[0].text)}` : "Нет в словаре")
             : "Нет в словаре"}
-          <button style={{ borderRadius: '50%', height: '15px' }} onClick={() => console.log(yandex)}></button>
+          <button style={{ borderRadius: '50%', height: '15px' }} onClick={() => console.log(yandexData)}></button>
         </div>
       </div>
       <hr />
-      <div className="YandexVocabulary">
-        {yandex.code !== 502  /* <<<---Обработка пробелов */
-          ? (yandex.def.length > 0 ? yandex.def.map(x => <SearchedTranslate pos={x.pos} translates={x.tr} key={x.pos} word={x.text} />) : 'Других переводов не найдено')
+      <div className="words">
+        {yandexData.code !== 502  /* <<<---Обработка пробелов */
+          ? (yandexData.def.length > 0 ? yandexData.def.map(x => <SearchedTranslate pos={x.pos} translates={x.tr} key={x.pos} word={x.text} />) : 'Других переводов не найдено')
           : 'Других переводов не найдено'}
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Dashboard.css';
-import YandexVocabulary from './YandexVocabulary/YandexVocabulary';
 import { Routes, Route } from "react-router-dom";
+import AddWord from './YandexVocabulary/AddWord';
 
 export default function Dashboard() {
   return (
@@ -11,7 +11,7 @@ export default function Dashboard() {
           <Routes>
             <Route exact path="/" element={<div>Инструкция к применению</div>}>
             </Route>
-            <Route exact path="/addword" element={<YandexVocabulary />}>
+            <Route exact path="/addword" element={<AddWord />}>
             </Route>
             <Route exact path="/mywords" element={<div>Здесь будет список слов с сервера</div>}>
             </Route>
