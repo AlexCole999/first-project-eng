@@ -3,15 +3,15 @@ import './SearchedTranslate.css';
 import toUpperCase from '../../../../functionsForComponents/toUpperCase';
 import { AiFillCheckCircle } from "react-icons/ai";
 import { collection, getDocs, getFirestore, doc, setDoc } from 'firebase/firestore';
-import { initializeApp } from 'firebase/app';
 import firebaseConfig from './../../../../../firebase/firebaseConfig';
 
 export default function SearchedTranslate(props) {
-  const app = initializeApp(firebaseConfig);
+
   const db = getFirestore();
 
   const addNewWordToFirebase = (tr, e) => {
-    setDoc(doc(db, "users", "user", "appendedwords", props.word), {
+    setDoc(doc(db, "users", "user", "appendedwords", props.word, "translates", tr), {
+      word: props.word,
       translate: tr
     })
       .then(x => console.log(props.word, tr, 'added'))
