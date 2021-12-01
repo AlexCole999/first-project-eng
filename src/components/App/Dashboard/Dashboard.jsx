@@ -2,7 +2,7 @@ import React from 'react';
 import './Dashboard.css';
 import { Routes, Route } from "react-router-dom";
 import AddWord from './AddWord/AddWord';
-
+import MyWords from './MyWords/MyWords';
 
 export default function Dashboard() {
   return (
@@ -14,7 +14,7 @@ export default function Dashboard() {
             </Route>
             <Route exact path="/addword" element={<AddWord />}>
             </Route>
-            <Route exact path="/mywords" element={<div>Здесь будет список слов с сервера</div>}>
+            <Route exact path="/mywords" element={<MyWords />}>
             </Route>
             <Route exact path="/progress" element={<div>Здесь будет игра и статистика добавленных и выученных</div>}>
             </Route>
