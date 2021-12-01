@@ -10,11 +10,16 @@ export default function SearchedTranslate(props) {
   const app = initializeApp(firebaseConfig);
   const db = getFirestore();
 
-  function sendDataToFirebase(tr) {
-    setDoc(doc(db, "user", "addedwords", props.word, tr), {
+  const addNewWordToFirebase = (tr, e) => {
+    setDoc(doc(db, "users", "user", "appendedwords", props.word), {
       translate: tr
     })
-      .then(x => console.log('done'));
+      .then(x => console.log(props.word, tr, 'added'))
+      .then(x => {
+        e.target.style.color === 'green'
+          ? e.target.style.color = "grey"
+          : e.target.style.color = 'green'
+      });
 
   }
 
@@ -46,10 +51,7 @@ export default function SearchedTranslate(props) {
               <AiFillCheckCircle
                 className="AiFillCheckCircle"
                 onMouseDown={(e) => {
-                  e.target.style.color === 'green'
-                    ? e.target.style.color = "grey"
-                    : e.target.style.color = 'green';
-                  sendDataToFirebase(x.text)
+                  addNewWordToFirebase(x.text, e);
                 }} />
             </div>)}
       </div>
