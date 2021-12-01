@@ -4,7 +4,10 @@ import toUpperCase from '../../../../functionsForComponents/toUpperCase';
 import { AiFillCheckCircle } from "react-icons/ai";
 import { getFirestore, doc, setDoc } from 'firebase/firestore';
 
+import { firebaseConfig } from './../../../../../firebase/firebaseConfig';
+
 export default function SearchedTranslate(props) {
+
 
   const db = getFirestore();
 
