@@ -3,6 +3,8 @@ import './Dashboard.css';
 import { Routes, Route } from "react-router-dom";
 import AddWord from './AddWord/AddWord';
 import MyWords from './MyWords/MyWords';
+import Profile from './Profile/Profile';
+import Progress from './Progress/Progress';
 
 export default function Dashboard() {
   return (
@@ -16,9 +18,9 @@ export default function Dashboard() {
             </Route>
             <Route exact path="/mywords" element={<MyWords />}>
             </Route>
-            <Route exact path="/progress" element={<div>Здесь будет игра и статистика добавленных и выученных</div>}>
+            <Route exact path="/progress" element={<Progress />}>
             </Route>
-            <Route exact path="/profile" element={<div>Здесь будет информация о профиле и настройки</div>}>
+            <Route exact path="/profile" element={<Profile />}>
             </Route>
           </Routes>
         </div>
