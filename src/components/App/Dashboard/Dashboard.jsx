@@ -12,7 +12,7 @@ export default function Dashboard(props) {
       <div className="Dashboard">
         <div className="Dashboard-content">
           <Routes>
-            <Route exact path="/" element={<div>Инструкция к применению</div>}>
+            <Route path='*' element={<div>Инструкция к применению</div>}>
             </Route>
             <Route exact path="/addword" element={<AddWord firebase={props.firebase} />}>
             </Route>
