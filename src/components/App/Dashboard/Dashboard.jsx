@@ -14,13 +14,13 @@ export default function Dashboard(props) {
           <Routes>
             <Route path='*' element={<div>Инструкция к применению</div>}>
             </Route>
-            <Route exact path="/addword" element={<AddWord firebase={props.firebase} />}>
+            <Route exact path="/first-project-eng/addword" element={<AddWord firebase={props.firebase} />}>
             </Route>
-            <Route exact path="/mywords" element={<MyWords />}>
+            <Route exact path="/first-project-eng/mywords" element={<MyWords />}>
             </Route>
-            <Route exact path="/progress" element={<Progress />}>
+            <Route exact path="/first-project-eng/progress" element={<Progress />}>
             </Route>
-            <Route exact path="/profile" element={<Profile />}>
+            <Route exact path="/first-project-eng/profile" element={<Profile />}>
             </Route>
           </Routes>
         </div>
