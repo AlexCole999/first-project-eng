@@ -17,6 +17,7 @@ export default function Navbar() {
         </div>
         <Routes>
           <Route
+
             exact path="*"
             element={<div className="Navbar-right">
               <NavLink to={"/addword"} className="Navbar-right-elem" title="Искать слова"><AiOutlineFileSearch style={{ width: "55px", height: "55px" }} /></NavLink>
