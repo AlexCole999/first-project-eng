@@ -43,7 +43,7 @@ export default function AddWord(props) {
       <hr />
       <div className="words">
         {yandexData.code !== 502  /* <<<---Обработка пробелов */
-          ? (yandexData.def.length > 0 ? yandexData.def.map(x => <SearchedTranslate pos={x.pos} translates={x.tr} key={x.pos} word={x.text} />) : 'Других переводов не найдено')
+          ? (yandexData.def.length > 0 ? yandexData.def.map(x => <SearchedTranslate pos={x.pos} translates={x.tr} key={x.pos} word={x.text} firebase={props.firebase} />) : 'Других переводов не найдено')
           : 'Других переводов не найдено'}
       </div>
     </div>

@@ -8,7 +8,7 @@ export default function App(props) {
   return (
     <div className="App">
       <Navbar />
-      <Dashboard />
+      <Dashboard firebase={props.firebase} />
       <Footer />
     </div>
   );

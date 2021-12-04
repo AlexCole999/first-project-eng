@@ -6,7 +6,7 @@ import MyWords from './MyWords/MyWords';
 import Profile from './Profile/Profile';
 import Progress from './Progress/Progress';
 
-export default function Dashboard() {
+export default function Dashboard(props) {
   return (
     <div className="dashboard-container">
       <div className="Dashboard">
@@ -14,7 +14,7 @@ export default function Dashboard() {
           <Routes>
             <Route exact path="/" element={<div>Инструкция к применению</div>}>
             </Route>
-            <Route exact path="/addword" element={<AddWord />}>
+            <Route exact path="/addword" element={<AddWord firebase={props.firebase} />}>
             </Route>
             <Route exact path="/mywords" element={<MyWords />}>
             </Route>

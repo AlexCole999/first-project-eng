@@ -7,7 +7,7 @@ import { getFirestore } from 'firebase/firestore';
 
 export default function SearchedTranslate(props) {
 
-  const db = getFirestore();
+  const db = props.firebase;
 
   const addNewWordToFirebase = (tr, e) => {
     setDoc(doc(db, "users", "user", "appendedwords", props.word, "translates", tr), {
