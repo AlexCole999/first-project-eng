@@ -3,7 +3,6 @@ import './SearchedTranslate.css';
 import toUpperCase from '../../../../functionsForComponents/toUpperCase';
 import { AiFillCheckCircle } from "react-icons/ai";
 import { doc, setDoc } from 'firebase/firestore';
-import { getFirestore } from 'firebase/firestore';
 
 export default function SearchedTranslate(props) {
 
