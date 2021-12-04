@@ -12,13 +12,12 @@ export default function Navbar() {
       <div className="Navbar">
         <div className="Logo">
           <div className="Logo-word">
-            <NavLink to={"/first-project-eng/"}>E</NavLink>
+            <NavLink to={"/first-project-eng/"}>ENGLISH</NavLink>
           </div>
         </div>
         <Routes>
           <Route
-
-            exact path="/first-project-eng/*"
+            exact path="*"
             element={<div className="Navbar-right">
               <NavLink to={"/first-project-eng/addword"} className="Navbar-right-elem" title="Искать слова"><AiOutlineFileSearch style={{ width: "55px", height: "55px" }} /></NavLink>
               <NavLink to={"/first-project-eng/mywords"} className="Navbar-right-elem" title="Добавленные слова"><AiOutlineHdd style={{ width: "55px", height: "55px" }} /></NavLink>
