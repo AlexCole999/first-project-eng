@@ -9,7 +9,7 @@ export default function SearchedTranslate(props) {
   const db = props.firebase;
 
   const addNewWordToFirebase = (tr, e) => {
-    setDoc(doc(db, "users", "user", "appendedwords", props.word, "translates", tr), {
+    setDoc(doc(db, "users", "user", "appendedwords", props.word), {
       word: props.word,
       translate: tr
     })
