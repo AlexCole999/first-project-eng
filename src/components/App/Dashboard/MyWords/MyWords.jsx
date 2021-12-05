@@ -19,9 +19,9 @@ export default function MyWords(props) {
   }
   return (
     <div className="MyWords">
-      <button style={{}} onClick={getDataFromFirebase}>Запросить данные</button>
-      <br />
-      <div>
+      <button style={{}} onClick={getDataFromFirebase}>Запросить данные</button><br />
+
+      <div className="MyWords__couples">
         {firebaseData.length !== 0
           ? firebaseData.map(x =>
             <div className="wordsCoupleAdded">

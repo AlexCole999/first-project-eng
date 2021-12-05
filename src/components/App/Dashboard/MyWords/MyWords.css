@@ -4,10 +4,17 @@
 .wordsCoupleAdded{
   display: flex;
   justify-content: space-between;
-  width: 350px;
   border:2px solid grey;
   border-radius: 5px;
-  padding: 5px;
-  margin: 3px 0px;
+  padding: 8px;
   font-weight: 700;
+  flex-grow: 1;
+}
+.MyWords__couples{
+  display: flex;
+  max-width: 1200px;
+  max-height: 1200px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 5px;
 }
