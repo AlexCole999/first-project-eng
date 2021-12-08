@@ -1,8 +1,7 @@
 import { React, useState } from 'react';
 import './MyWords.css';
 import { collection, getDocs } from "firebase/firestore";
-import toUpperCase from './../../../functionsForComponents/toUpperCase';
-
+import WordsCouple from './WordsCouple/WordsCouple';
 
 export default function MyWords(props) {
   const initialFirebaseData = [];
@@ -18,19 +17,23 @@ export default function MyWords(props) {
   }
   return (
     <div className="MyWords">
-      <button style={{}} onClick={getDataFromFirebase}>Запросить данные</button><br />
+      <button
+        style={{
+          width: "200px",
+          height: "50px",
+          marginBottom: "25px"
+        }}
+        onClick={getDataFromFirebase}>
+        <b style={{ fontSize: "14px" }}>Запросить данные</b>
+      </button>
+      <br />
 
       <div className="MyWords__couples">
         {firebaseData.length !== 0
           ? firebaseData.map(x =>
-            <div className="wordsCoupleAdded">
-              <div>{toUpperCase(x.data().word)}</div>
-              <div>{toUpperCase(x.data().translate)}</div>
-            </div>
-          )
+            <WordsCouple word={x.data().word} translate={x.data().translate} />)
           : "Запросите данные"}
       </div>
-
     </div>
   )
 }

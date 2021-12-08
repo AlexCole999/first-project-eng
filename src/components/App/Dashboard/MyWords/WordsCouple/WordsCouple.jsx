@@ -1,7 +1,7 @@
 import { React } from 'react';
 import './WordsCouple.css';
+import toUpperCase from './../../../../functionsForComponents/toUpperCase';
 
-import toUpperCase from './../../../functionsForComponents/toUpperCase';
 
 export default function WordsCouple(props) {
   return (
