@@ -7,5 +7,5 @@
   max-height: 600px;
   flex-direction: column;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 4px 20px;
 }
