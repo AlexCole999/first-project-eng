@@ -4,7 +4,6 @@ import { collection, getDocs } from "firebase/firestore";
 import toUpperCase from './../../../functionsForComponents/toUpperCase';
 
 
-
 export default function MyWords(props) {
   const initialFirebaseData = [];
   const [firebaseData, setFirebaseData] = useState(initialFirebaseData);
@@ -31,6 +30,7 @@ export default function MyWords(props) {
           )
           : "Запросите данные"}
       </div>
+
     </div>
   )
 }
