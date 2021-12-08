@@ -2,7 +2,7 @@ import React from 'react';
 import './SearchedTranslate.css';
 import toUpperCase from '../../../../functionsForComponents/toUpperCase';
 import { AiFillCheckCircle } from "react-icons/ai";
-import { doc, setDoc } from 'firebase/firestore';
+import { doc, setDoc, getDoc } from 'firebase/firestore';
 
 export default function SearchedTranslate(props) {
 
@@ -21,7 +21,7 @@ export default function SearchedTranslate(props) {
       });
 
   }
-
+  async function some() { let a = await getDoc(doc(db, "users", "user", "appendedwords", props.word)); console.log(a.data().translate) }
   return (
     <div className="SearchedTranslate">
       <div>
@@ -54,6 +54,7 @@ export default function SearchedTranslate(props) {
                 }} />
             </div>)}
       </div>
+      <button onClick={some}></button>
     </div>
   );
 }
