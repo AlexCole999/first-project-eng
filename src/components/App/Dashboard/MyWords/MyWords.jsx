@@ -17,23 +17,17 @@ export default function MyWords(props) {
   }
   return (
     <div className="MyWords">
-      <button
-        style={{
-          width: "200px",
-          height: "50px",
-          marginBottom: "25px"
-        }}
-        onClick={getDataFromFirebase}>
-        <b style={{ fontSize: "14px" }}>Запросить данные</b>
-      </button>
-      <br />
+      {!firebaseData.length
+        ? <button style={{ width: "200px", height: "50px", marginBottom: "25px" }} onClick={getDataFromFirebase}><b style={{ fontSize: "14px" }}>Запросить данные</b>< br /></button>
+        : " "}
 
-      <div className="MyWords__couples">
+
+      < div className="MyWords__couples">
         {firebaseData.length !== 0
           ? firebaseData.map(x =>
             <WordsCouple word={x.data().word} translate={x.data().translate} />)
           : "Запросите данные"}
       </div>
-    </div>
+    </div >
   )
 }
