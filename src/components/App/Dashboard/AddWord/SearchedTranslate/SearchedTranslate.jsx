@@ -21,7 +21,15 @@ export default function SearchedTranslate(props) {
       });
 
   }
-  async function some() { let a = await getDoc(doc(db, "users", "user", "appendedwords", props.word)); console.log(a.data().translate) }
+
+  ///ФУНКЦИЯ ДЛЯ ЗАПРОСА ДАННЫХ О СЛОВАХ НА СЕРВЕРЕ--->>>
+  async function some() {
+    let a = await getDoc(doc(db, "users", "user", "appendedwords", props.word));
+    let b = a.data() !== undefined ? a.data().translate : "no data";
+    console.log(b)
+  }
+  ///<<<---ФУНКЦИЯ ДЛЯ ЗАПРОСА ДАННЫХ О СЛОВАХ НА СЕРВЕРЕ
+
   return (
     <div className="SearchedTranslate">
       <div>
