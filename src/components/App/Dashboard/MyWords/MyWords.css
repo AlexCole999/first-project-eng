@@ -4,7 +4,7 @@
 .MyWords__couples{
   display: flex;
   max-width: 1200px;
-  max-height: 1200px;
+  max-height: 800px;
   flex-direction: column;
   flex-wrap: wrap;
   gap: 4px 20px;
