@@ -8,10 +8,11 @@ export default function SearchedTranslate(props) {
 
   const db = props.firebase;
 
-  const addNewWordToFirebase = (tr, e) => {
+  async function addNewWordToFirebase(tr, e) {
+    let a = await getDoc(doc(db, "users", "user", "appendedwords", props.word));
     setDoc(doc(db, "users", "user", "appendedwords", props.word), {
       word: props.word,
-      translate: tr
+      translate: a.data() == undefined ? [tr] : [...new Set([...a.data().translate, tr])]
     })
       .then(x => console.log(props.word, tr, 'added'))
       .then(x => {
