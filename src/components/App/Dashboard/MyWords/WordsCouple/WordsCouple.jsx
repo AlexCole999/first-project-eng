@@ -10,8 +10,8 @@ export default function WordsCouple(props) {
       <div style={{ fontStyle: "italic", fontWeight: "600" }}>
         {Array.isArray(props.translate)
           ? props.translate.map(x =>
-            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-              <div key={x}>{toUpperCase(x)}</div>
+            <div key={x} style={{ display: 'flex', justifyContent: 'flex-end' }}>
+              <div>{toUpperCase(x)}</div>
             </div>
           )
           : toUpperCase(props.translate)}

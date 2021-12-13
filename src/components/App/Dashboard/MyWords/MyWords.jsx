@@ -25,7 +25,7 @@ export default function MyWords(props) {
       < div className="MyWords__couples">
         {firebaseData.length !== 0
           ? firebaseData.map(x =>
-            <WordsCouple ket={x} word={x.data().word} translate={x.data().translate} />)
+            <WordsCouple key={x.data().word} word={x.data().word} translate={x.data().translate} />)
           : "Запросите данные"}
       </div>
     </div >
