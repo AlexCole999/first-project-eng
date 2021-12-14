@@ -3,9 +3,11 @@ import './Profile.css';
 import { collection, getDocs } from 'firebase/firestore';
 
 export default function Profile(props) {
+
   const initialState = 'загрузка...'
   const [state, setstate] = useState(initialState)
-  useEffect(getData)
+  useEffect(getData, [])
+
   function getData() {
     getDocs(collection(props.firebase, "users", "user", "appendedwords"))
       .then(x => {
@@ -14,6 +16,7 @@ export default function Profile(props) {
   }
   return (
     <div className="Profile">
+      <div style={{ display: 'flex', justifyContent: 'center' }}><div>Статистика</div></div>
       <div>Слов в словаре: {state}</div>
     </div>
   )
