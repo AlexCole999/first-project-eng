@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
 import './MyWords.css';
 import { collection, getDocs } from "firebase/firestore";
 import WordsCouple from './WordsCouple/WordsCouple';
@@ -6,7 +6,7 @@ import WordsCouple from './WordsCouple/WordsCouple';
 export default function MyWords(props) {
   const initialFirebaseData = [];
   const [firebaseData, setFirebaseData] = useState(initialFirebaseData);
-
+  useEffect(getDataFromFirebase, [])
   function getDataFromFirebase() {
     getDocs(collection(props.firebase, "users", "user", "appendedwords"))
       .then(collection => {
@@ -17,11 +17,6 @@ export default function MyWords(props) {
   }
   return (
     <div className="MyWords">
-      {!firebaseData.length
-        ? <button style={{ width: "200px", height: "50px", marginBottom: "25px" }} onClick={getDataFromFirebase}><b style={{ fontSize: "14px" }}>Запросить данные</b>< br /></button>
-        : " "}
-
-
       < div className="MyWords__couples">
         {firebaseData.length !== 0
           ? firebaseData.map(x =>
