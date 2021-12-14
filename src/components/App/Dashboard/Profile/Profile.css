@@ -4,3 +4,8 @@
   border:2px solid rgb(107, 102, 102);
   border-radius: 5px;
 }
+.statistic-item{ 
+  display: flex; 
+  justify-content: space-between;
+  margin-top: 15px;
+}
