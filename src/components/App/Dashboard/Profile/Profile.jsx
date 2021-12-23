@@ -18,6 +18,7 @@ export default function Profile(props) {
         setTranslatesLength(count);
       })
   }
+
   return (
     <div className='Profile'>
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '45px' }}><div style={{ fontSize: "32px", fontWeight: "bold" }}>Профиль</div></div>
