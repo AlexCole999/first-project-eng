@@ -7,3 +7,10 @@
   font-weight: 700;
   flex-grow: 1;
 }
+.WordsCouple-icon{
+  color:grey;
+}
+.WordsCouple-icon:hover{
+  color:red;
+  cursor: alias;
+}
