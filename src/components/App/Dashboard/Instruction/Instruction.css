@@ -1,0 +1,20 @@
+
+
+.Instruction{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap:50px;
+  flex-direction: column;
+}
+
+.Instruction-elem{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap:10px;
+}
+.Instruction-text{
+  font-size: 16px;
+  font-style: italic;
+}

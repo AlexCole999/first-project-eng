@@ -1,9 +1,9 @@
 import React from 'react';
 import './Navbar.css';
 import { AiOutlineFileSearch } from "react-icons/ai";
-import { AiOutlineUser } from "react-icons/ai";
 import { AiOutlineHdd } from "react-icons/ai";
 import { AiOutlineFund } from "react-icons/ai";
+import { AiOutlineUser } from "react-icons/ai";
 import { NavLink, Routes, Route } from "react-router-dom";
 
 export default function Navbar() {
