@@ -1,4 +1,7 @@
 .Profile{
+  position: relative;
+}
+.Profile-table{
   padding: 15px;
   width: 250px;
   border:2px solid rgb(107, 102, 102);

@@ -15,13 +15,16 @@ export default function Profile(props) {
       })
   }
   return (
-    <div className="Profile">
-      <div className="statistic">
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <div>Статистика</div>
-        </div>
-        <div className='statistic-item'>
-          <div>Слов в словаре: </div><div><b>{vocabularyLength}</b></div>
+    <div className='Profile'>
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '45px' }}><div style={{ fontSize: "32px", fontWeight: "bold" }}>Профиль</div></div>
+      <div className="Profile-table">
+        <div className="statistic">
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <div>Статистика</div>
+          </div>
+          <div className='statistic-item'>
+            <div>Слов в словаре: </div><div><b>{vocabularyLength}</b></div>
+          </div>
         </div>
       </div>
     </div>

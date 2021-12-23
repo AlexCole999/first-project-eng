@@ -23,6 +23,7 @@ export default function AddWord(props) {
   }
   return (
     <div>
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '45px' }}><div style={{ fontSize: "32px", fontWeight: "bold" }}>Поиск слов</div></div>
       <div>Введите слово для поиска:</div>
       <div className="wordSearch">
         <input className="wordSearch__input"
