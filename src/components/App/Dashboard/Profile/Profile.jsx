@@ -6,12 +6,16 @@ export default function Profile(props) {
 
   const initialState = 'загрузка...'
   const [vocabularyLength, setVocabularyLength] = useState(initialState)
+  const [translatesLength, setTranslatesLength] = useState(initialState)
   useEffect(getData, [])
 
   function getData() {
     getDocs(collection(props.firebase, "users", "user", "appendedwords"))
       .then(x => {
-        setVocabularyLength(x.docs.length); console.log(x)
+        setVocabularyLength(x.docs.length);
+        let count = 0;
+        x.docs.forEach(x => count += x.data().translate.length);
+        setTranslatesLength(count);
       })
   }
   return (
@@ -24,6 +28,9 @@ export default function Profile(props) {
           </div>
           <div className='statistic-item'>
             <div>Слов в словаре: </div><div><b>{vocabularyLength}</b></div>
+          </div>
+          <div className='statistic-item'>
+            <div>Переводов слов: </div><div><b>{translatesLength}</b></div>
           </div>
         </div>
       </div>
