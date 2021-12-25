@@ -1,7 +1,7 @@
 .navbar-container{
   display: flex;
   justify-content: center;
-  background-color: rgb(147, 184, 214);
+  background: linear-gradient(rgb(13, 91, 155),rgba(125, 177, 223, 0.637));
 }
 .Navbar{
   grid-area: Navbar;
@@ -21,7 +21,7 @@ a{
    color:rgb(32, 4, 83);
 }
 .Navbar-right-elem{
-  background-color: rgb(192, 208, 223);
+  background-color: rgba(255, 255, 255, 0.795);
   border-radius: 50%;
   color:rgb(32, 4, 83);
   transition: linear 0.1s;
