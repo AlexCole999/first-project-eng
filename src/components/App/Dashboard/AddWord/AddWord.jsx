@@ -24,9 +24,8 @@ export default function AddWord(props) {
   return (
     <div>
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '45px' }}><div style={{ fontSize: "32px", fontWeight: "bold" }}>Поиск слов</div></div>
-      <div>Введите слово для поиска:</div>
       <div className="wordSearch">
-        <input className="wordSearch__input"
+        <input placeholder='Найти слово...' className="wordSearch__input"
           type="text"
           onChange={
             (e) => {
@@ -43,8 +42,8 @@ export default function AddWord(props) {
       </div>
       <div className="words">
         {yandexData.code !== 502  /* <<<---Обработка пробелов */
-          ? (yandexData.def.length > 0 ? yandexData.def.map(x => <SearchedTranslate pos={x.pos} translates={x.tr} key={x.pos} word={x.text} firebase={props.firebase} />) : 'Других переводов не найдено')
-          : 'Других переводов не найдено'}
+          ? (yandexData.def.length > 0 ? yandexData.def.map(x => <SearchedTranslate pos={x.pos} translates={x.tr} key={x.pos} word={x.text} firebase={props.firebase} />) : <div style={{ fontStyle: 'italic', fontSize: '14px', fontWeight: '400' }}>Других переводов не найдено</div>)
+          : <div style={{ fontStyle: 'italic', fontSize: '16px' }}>Других переводов не найдено</div>}
       </div>
     </div>
   );
