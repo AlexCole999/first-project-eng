@@ -1,9 +1,12 @@
 .SearchedTranslate{
   font-weight: bold;
-  border: 2px solid grey;
+  background: linear-gradient(135deg,#3030308e,#494949a6);
+  border-top:1px solid rgba(255, 255, 255, 0.5);
+  border-left:1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 2px 2px 2px 0px rgb(163, 163, 163);
   min-height: 100px;
   padding: 15px;
-  border-radius: 15px;
+  border-radius: 5px;
   flex-grow: 1;
   margin: 5px;
 }
