@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   grid-area: Footer;
-  background: linear-gradient(#181818,rgba(141, 173, 201, 0.863));
+  background: linear-gradient(#181818,rgb(70, 85, 99));
   height: 100%;
   text-align: center;
 }
