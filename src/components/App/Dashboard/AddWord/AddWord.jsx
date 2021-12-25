@@ -25,7 +25,7 @@ export default function AddWord(props) {
     <div>
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '45px' }}><div style={{ fontSize: "32px", fontWeight: "bold" }}>Поиск слов</div></div>
       <div className="wordSearch">
-        <input placeholder='Найти слово...' className="wordSearch__input"
+        <input placeholder='Ввести слово...' className="wordSearch__input"
           type="text"
           onChange={
             (e) => {
@@ -37,7 +37,7 @@ export default function AddWord(props) {
           {yandexData.code !== 502
             ? (yandexData.def.length ? `${toUpperCase(yandexData.def[0].tr[0].text)}` : "Нет в словаре")
             : "Нет в словаре"}
-          <button style={{ borderRadius: '50%', height: '15px' }} onClick={() => console.log(yandexData)}></button>
+          {/* <button style={{ borderRadius: '50%', height: '15px' }} onClick={() => console.log(yandexData)}></button> */}
         </div>
       </div>
       <div className="words">
