@@ -39,12 +39,13 @@ export default function AddWord(props) {
             : "Нет в словаре"}
           {/* <button style={{ borderRadius: '50%', height: '15px' }} onClick={() => console.log(yandexData)}></button> */}
         </div>
+        <div className="words">
+          {yandexData.code !== 502  /* <<<---Обработка пробелов */
+            ? (yandexData.def.length > 0 ? yandexData.def.map(x => <SearchedTranslate pos={x.pos} translates={x.tr} key={x.pos} word={x.text} firebase={props.firebase} />) : <div style={{ fontStyle: 'italic', fontSize: '14px', fontWeight: '400' }}>Других переводов не найдено</div>)
+            : <div style={{ fontStyle: 'italic', fontSize: '16px' }}>Других переводов не найдено</div>}
+        </div>
       </div>
-      <div className="words">
-        {yandexData.code !== 502  /* <<<---Обработка пробелов */
-          ? (yandexData.def.length > 0 ? yandexData.def.map(x => <SearchedTranslate pos={x.pos} translates={x.tr} key={x.pos} word={x.text} firebase={props.firebase} />) : <div style={{ fontStyle: 'italic', fontSize: '14px', fontWeight: '400' }}>Других переводов не найдено</div>)
-          : <div style={{ fontStyle: 'italic', fontSize: '16px' }}>Других переводов не найдено</div>}
-      </div>
+
     </div>
   );
 }
