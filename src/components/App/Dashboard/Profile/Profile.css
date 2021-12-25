@@ -4,8 +4,10 @@
 .Profile-table{
   padding: 15px;
   width: 250px;
-  border:2px solid rgb(107, 102, 102);
   border-radius: 5px;
+  background: rgb(104, 104, 104, 0.1);  
+  backdrop-filter: blur(50px);
+  border-top:1px solid rgba(255, 255, 255, 0.5)
 }
 .statistic-item{ 
   display: flex; 
