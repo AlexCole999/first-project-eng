@@ -41,7 +41,6 @@ export default function AddWord(props) {
           <button style={{ borderRadius: '50%', height: '15px' }} onClick={() => console.log(yandexData)}></button>
         </div>
       </div>
-      <hr />
       <div className="words">
         {yandexData.code !== 502  /* <<<---Обработка пробелов */
           ? (yandexData.def.length > 0 ? yandexData.def.map(x => <SearchedTranslate pos={x.pos} translates={x.tr} key={x.pos} word={x.text} firebase={props.firebase} />) : 'Других переводов не найдено')
