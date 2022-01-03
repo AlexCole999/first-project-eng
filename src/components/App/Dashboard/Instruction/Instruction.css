@@ -1,10 +1,8 @@
-
-
 .Instruction{
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  gap:50px;
+  gap:35px;
   flex-direction: column;
 }
 
@@ -12,9 +10,12 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap:10px;
+  background-color: rgba(82, 82, 82, 0.322);
+  padding: 15px 55px 15px 15px;
+  border-radius: 7px;
 }
 .Instruction-text{
   font-size: 16px;
   font-style: italic;
+  font-weight: 700;
 }
