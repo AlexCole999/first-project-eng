@@ -1,9 +1,13 @@
 .Profile{
   position: relative;
 }
+.table-wrapper{
+  display: flex;
+  justify-content: center;
+}
 .Profile-table{
   padding: 15px;
-  width: 250px;
+  width: 350px;
   border-radius: 5px;
   background: linear-gradient(135deg,#3030308e,#494949a6);
   border-top:1px solid rgba(255, 255, 255, 0.5);
