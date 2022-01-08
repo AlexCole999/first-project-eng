@@ -13,12 +13,18 @@
 }
 .WordsCouple-icon{
   color:grey;
+  width: 35px;
+  height: 35px;
+  transition: linear 0.1s;
+  transition: 0.3s ease all;
 }
 .WordsCouple-icon:hover{
   color:red;
   cursor: alias;
+  transform: scale(1.1);
 }
 .WordsCouple-word{
+  margin-left: 5px;
   display: flex;
   align-items: center;
 }

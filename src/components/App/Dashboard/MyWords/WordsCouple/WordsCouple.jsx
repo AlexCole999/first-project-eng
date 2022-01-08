@@ -11,7 +11,7 @@ export default function WordsCouple(props) {
         {Array.isArray(props.translate)
           ? props.translate.map(x =>
             <div key={x} className='WordsCouple-translates-translate'>
-              <div>{toUpperCase(x)}</div><AiFillCloseCircle className='WordsCouple-icon' style={{ marginLeft: '5px' }} />
+              <div>{toUpperCase(x)}</div><AiFillCloseCircle className='WordsCouple-icon' style={{ marginLeft: '10px' }} />
             </div>
           )
           : toUpperCase(props.translate)}

@@ -31,7 +31,7 @@
   height: 35px;
   transition: linear 0.1s;
   margin-left: 65px;
-  transition: 0.1s ease all;
+  transition: 0.3s ease all;
 }
 .AiFillCheckCircle:hover{
   color:rgb(129, 182, 7);
