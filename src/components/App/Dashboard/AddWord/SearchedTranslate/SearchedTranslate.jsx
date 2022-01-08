@@ -15,8 +15,8 @@ export default function SearchedTranslate(props) {
     })
       .then(x => console.log(props.word, tr, 'added'))
       .then(x => {
-        e.target.style.color === 'green'
-          ? e.target.style.color = "grey"
+        e.target.style.color !== 'green'
+          ? e.target.style.color = 'green'
           : e.target.style.color = 'green'
       });
 
