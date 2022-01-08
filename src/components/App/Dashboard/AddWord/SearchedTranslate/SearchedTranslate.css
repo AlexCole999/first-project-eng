@@ -39,3 +39,9 @@
   transform: scale(1.1);
   cursor: copy;
 }
+.green{
+  color:green
+}
+.red{
+  color:red
+}

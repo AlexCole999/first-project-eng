@@ -2,9 +2,20 @@ import React, { useState } from 'react';
 import SearchedTranslate from './SearchedTranslate/SearchedTranslate';
 import './AddWord.css';
 import toUpperCase from '../../../functionsForComponents/toUpperCase';
+import { getDoc, doc } from 'firebase/firestore';
+
 
 export default function AddWord(props) {
   const [yandexData, setYandexData] = useState({ head: {}, def: [] });
+  const [wordsInBase, setWordsInBase] = useState([]);
+
+  async function some(input) {
+    if (input) {
+      let a = await getDoc(doc(props.firebase, "users", "user", "appendedwords", input));
+      a.data() !== undefined ? setWordsInBase(a.data().translate) : setWordsInBase([]);
+    }
+    else setWordsInBase([])
+  }
 
   function yandexDictionaryRequest(input) {
     if (input) {
@@ -29,6 +40,7 @@ export default function AddWord(props) {
           type="text"
           onChange={
             (e) => {
+              some(e.target.value);
               yandexDictionaryRequest(e.target.value);
             }
           }
@@ -41,7 +53,7 @@ export default function AddWord(props) {
         </div>
         <div className="words">
           {yandexData.code !== 502  /* <<<---Обработка пробелов */
-            ? (yandexData.def.length > 0 ? yandexData.def.map(x => <SearchedTranslate pos={x.pos} translates={x.tr} key={x.pos} word={x.text} firebase={props.firebase} />) : <div style={{ fontStyle: 'italic', fontSize: '14px', fontWeight: '400' }}>Других переводов не найдено</div>)
+            ? (yandexData.def.length > 0 ? yandexData.def.map(x => <SearchedTranslate pos={x.pos} translates={x.tr} key={x.pos} word={x.text} firebase={props.firebase} wordsInBase={wordsInBase} />) : <div style={{ fontStyle: 'italic', fontSize: '14px', fontWeight: '400' }}>Других переводов не найдено</div>)
             : <div style={{ fontStyle: 'italic', fontSize: '16px' }}>Других переводов не найдено</div>}
         </div>
       </div>

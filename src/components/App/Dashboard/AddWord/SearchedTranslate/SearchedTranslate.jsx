@@ -5,7 +5,6 @@ import { AiFillCheckCircle } from "react-icons/ai";
 import { doc, setDoc, getDoc } from 'firebase/firestore';
 
 export default function SearchedTranslate(props) {
-
   const db = props.firebase;
 
   async function addNewWordToFirebase(tr, e) {
@@ -25,9 +24,7 @@ export default function SearchedTranslate(props) {
 
   ///ФУНКЦИЯ ДЛЯ ЗАПРОСА ДАННЫХ О СЛОВАХ НА СЕРВЕРЕ--->>>
   async function some() {
-    let a = await getDoc(doc(db, "users", "user", "appendedwords", props.word));
-    let b = a.data() !== undefined ? a.data().translate : "no data";
-    console.log(b)
+    console.log(props.wordsInBase)
   }
   ///<<<---ФУНКЦИЯ ДЛЯ ЗАПРОСА ДАННЫХ О СЛОВАХ НА СЕРВЕРЕ
 
@@ -57,7 +54,7 @@ export default function SearchedTranslate(props) {
             <div className="translatedElement" key={x.text}>
               <div>{toUpperCase(x.text)}</div>
               <AiFillCheckCircle
-                className="AiFillCheckCircle"
+                className={`AiFillCheckCircle ${props.wordsInBase.some(elem => elem == x.text) ? 'green' : ""}`}
                 onMouseDown={(e) => {
                   addNewWordToFirebase(x.text, e);
                 }} />
