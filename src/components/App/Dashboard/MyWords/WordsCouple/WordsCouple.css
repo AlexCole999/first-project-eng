@@ -9,6 +9,7 @@
   padding: 8px;
   font-weight: 700;
   flex-grow: 1;
+  min-width: 100%;
 }
 .WordsCouple-icon{
   color:grey;
@@ -16,4 +17,22 @@
 .WordsCouple-icon:hover{
   color:red;
   cursor: alias;
+}
+.WordsCouple-word{
+  display: flex;
+  align-items: center;
+}
+.WordsCouple-translates{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  font-weight: 500;
+  font-style: italic;
+}
+.WordsCouple-translates-translate{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 5px 0px 5px 0px;
 }

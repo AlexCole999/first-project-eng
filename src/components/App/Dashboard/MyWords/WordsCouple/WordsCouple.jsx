@@ -6,11 +6,11 @@ import { AiFillCloseCircle } from "react-icons/ai";
 export default function WordsCouple(props) {
   return (
     <div className="WordsCouple">
-      <div style={{ display: 'flex', alignItems: 'center' }}>{toUpperCase(props.word)}</div>
-      <div style={{ fontStyle: "italic", fontWeight: "500" }}>
+      <div className='WordsCouple-word'>{toUpperCase(props.word)}</div>
+      <div className='WordsCouple-translates'>
         {Array.isArray(props.translate)
           ? props.translate.map(x =>
-            <div key={x} style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', margin: '5px 0px 5px 0px' }}>
+            <div key={x} className='WordsCouple-translates-translate'>
               <div>{toUpperCase(x)}</div><AiFillCloseCircle className='WordsCouple-icon' style={{ marginLeft: '5px' }} />
             </div>
           )

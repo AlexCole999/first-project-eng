@@ -3,8 +3,8 @@
 }
 .MyWords__couples{
   display: flex;
+  align-items: center;
   max-width: 1200px;
-  max-height: 1200px;
   flex-direction: column;
   flex-wrap: wrap;
   gap: 6px 8px;
