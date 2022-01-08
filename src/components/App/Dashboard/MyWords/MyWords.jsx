@@ -20,7 +20,14 @@ export default function MyWords(props) {
 
   return (
     <div className="MyWords">
-      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '45px' }}><div style={{ fontSize: "32px", fontWeight: "bold" }}>База слов</div></div>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '45px', flexDirection: 'column' }}>
+        <div style={{ fontSize: "32px", fontWeight: "bold" }}>
+          База слов
+        </div>
+        <div style={{ fontStyle: 'italic', fontSize: "15px" }}>
+          быстрый поиск : ctrl + f
+        </div>
+      </div>
       < div className="MyWords__couples">
         {firebaseData.length !== 0
           ? firebaseData.map(x =>
