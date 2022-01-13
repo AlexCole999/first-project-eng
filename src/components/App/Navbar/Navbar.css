@@ -43,5 +43,9 @@ a:active{
 .Logo-word{
   font-size: 40px;
   font-weight: 900;
-  color:black;
+}
+@media screen and (max-width:800px) {
+  .Navbar{
+    flex-direction:column;
+  }
 }
