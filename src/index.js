@@ -10,14 +10,7 @@ import { firebaseConfig } from './firebase/firebaseConfig';
 import { getFirestore } from 'firebase/firestore';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import getWordsFromFirebaseReducer from './reducers/getWordsFromFirebaseReducer';
-import reducertwo from './reducers/reducertwo';
-
-
-const combinedReducers = combineReducers({
-  wordsFromFirebase: getWordsFromFirebaseReducer,
-  second: reducertwo
-})
+import combinedReducers from './reducers/combinedReducers';
 
 let store = createStore(combinedReducers, composeWithDevTools(applyMiddleware(thunk)))
 
