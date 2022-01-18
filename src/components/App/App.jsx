@@ -10,6 +10,11 @@ export default function App(props) {
       <Navbar />
       <Dashboard firebase={props.firebase} />
       <Footer />
+      <div>1234</div>
+      <div>1234</div>
+      <div>1234</div>
+      <div>1234</div>
+      <div>1234</div>
     </div>
   );
 }
