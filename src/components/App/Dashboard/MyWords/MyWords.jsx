@@ -12,7 +12,7 @@ export default function MyWords(props) {
   function getDataFromFirebase() {
     getDocs(collection(props.firebase, "users", "user", "appendedwords"))
       .then(collection => {
-        dispatch({ type: "ADD_DATA", data: collection.docs });
+        dispatch({ type: "ADD_DATA_FROM_FIREBASE", data: collection.docs });
         console.log("Data request success");
         console.log((collection.docs))
       })
