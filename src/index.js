@@ -10,26 +10,12 @@ import { firebaseConfig } from './firebase/firebaseConfig';
 import { getFirestore } from 'firebase/firestore';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import getWordsFromFirebaseReducer from './reducers/getWordsFromFirebaseReducer';
+import reducertwo from './reducers/reducertwo';
 
-let defaultstateone = { some1: 1, count: 0 }
-let defaultstatetwo = { some2: 2, count: 0 }
 
-let reducerone = (state = defaultstateone, action) => {
-  switch (action.type) {
-    case "ADD_DATA":
-      return { ...state, count: state.count + 1, data: action.data }
-    default: return state
-  }
-}
-let reducertwo = (state = defaultstatetwo, action) => {
-  switch (action.type) {
-    case "INCREMENT":
-      return { ...state, count: state.count + 1 }
-    default: return state
-  }
-}
-let combinedReducers = combineReducers({
-  first: reducerone,
+const combinedReducers = combineReducers({
+  wordsFromFirebase: getWordsFromFirebaseReducer,
   second: reducertwo
 })
 
