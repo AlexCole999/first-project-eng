@@ -13,8 +13,6 @@ export default function MyWords(props) {
     getDocs(collection(props.firebase, "users", "user", "appendedwords"))
       .then(collection => {
         dispatch({ type: "ADD_DATA_FROM_FIREBASE", data: collection.docs });
-        console.log("Data request success");
-        console.log((collection.docs))
       })
   }
 

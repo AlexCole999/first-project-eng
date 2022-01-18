@@ -1,4 +1,4 @@
-let defaultstatetwo = { some2: 2 }
+let defaultstatetwo = { head: {}, def: [] }
 const getWordsFromTranslatorAPI = (state = defaultstatetwo, action) => {
   switch (action.type) {
     case "INCREMENT":

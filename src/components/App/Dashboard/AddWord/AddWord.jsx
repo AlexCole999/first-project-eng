@@ -3,7 +3,8 @@ import SearchedTranslate from './SearchedTranslate/SearchedTranslate';
 import './AddWord.css';
 import toUpperCase from '../../../functionsForComponents/toUpperCase';
 import { getDoc, doc } from 'firebase/firestore';
-
+import getWordsFromTranslatorAPI from './../../../../reducers/getWordsFromTranslatorAPI';
+import { useSelector } from 'react-redux';
 
 export default function AddWord(props) {
   const [yandexData, setYandexData] = useState({ head: {}, def: [] });
