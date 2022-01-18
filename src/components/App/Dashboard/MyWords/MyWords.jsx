@@ -2,17 +2,17 @@ import { React, useState, useEffect } from 'react';
 import './MyWords.css';
 import { collection, getDocs } from "firebase/firestore";
 import WordsCouple from './WordsCouple/WordsCouple';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function MyWords(props) {
-
-  const initialFirebaseData = [];
-  const [firebaseData, setFirebaseData] = useState(initialFirebaseData);
+  const dispatch = useDispatch();
+  const dataFromFirebase = useSelector(state => state.first.data ? state.first.data : "")
   useEffect(getDataFromFirebase, [])
 
   function getDataFromFirebase() {
     getDocs(collection(props.firebase, "users", "user", "appendedwords"))
       .then(collection => {
-        setFirebaseData(collection.docs);
+        dispatch({ type: "ADD_DATA", data: collection.docs });
         console.log("Data request success");
         console.log((collection.docs))
       })
@@ -29,8 +29,8 @@ export default function MyWords(props) {
         </div>
       </div>
       < div className="MyWords__couples">
-        {firebaseData.length !== 0
-          ? firebaseData.map(x =>
+        {dataFromFirebase.length !== 0
+          ? dataFromFirebase.map(x =>
             <WordsCouple key={x.data().word} word={x.data().word} translate={x.data().translate} />)
           : <b>Загрузка данных...</b>}
       </div>
