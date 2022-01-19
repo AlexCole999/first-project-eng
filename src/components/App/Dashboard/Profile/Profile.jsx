@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from 'react';
+import { React, useEffect } from 'react';
 import './Profile.css';
 import { collection, getDocs } from 'firebase/firestore';
 import { useDispatch, useSelector } from 'react-redux';
