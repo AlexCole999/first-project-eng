@@ -7,11 +7,12 @@ import { useDispatch, useSelector } from 'react-redux';
 export default function MyWords(props) {
 
   const dispatch = useDispatch();
+  const firebase = useSelector(state => state.firebase.firebase)
   const dataFromFirebase = useSelector(state => state.wordsFromFirebase.data)
   useEffect(getDataFromFirebase, [])
 
   function getDataFromFirebase() {
-    getDocs(collection(props.firebase, "users", "user", "appendedwords"))
+    getDocs(collection(firebase, "users", "user", "appendedwords"))
       .then(collection => {
         dispatch({ type: "ADD_DATA_FROM_FIREBASE", data: collection.docs });
       })

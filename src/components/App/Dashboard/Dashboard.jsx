@@ -8,21 +8,21 @@ import Progress from './Progress/Progress';
 import Instruction from './Instruction/Instruction';
 
 
-export default function Dashboard(props) {
+export default function Dashboard() {
   return (
     <div className="dashboard-container">
       <div className="Dashboard">
         <div className="Dashboard-content">
           <Routes>
-            <Route path='*' element={<Instruction firebase={props.firebase} />}>
+            <Route path='*' element={<Instruction />}>
             </Route>
-            <Route exact path="/first-project-eng/addword" element={<AddWord firebase={props.firebase} />}>
+            <Route exact path="/first-project-eng/addword" element={<AddWord />}>
             </Route>
-            <Route exact path="/first-project-eng/mywords" element={<MyWords firebase={props.firebase} />}>
+            <Route exact path="/first-project-eng/mywords" element={<MyWords />}>
             </Route>
-            <Route exact path="/first-project-eng/progress" element={<Progress firebase={props.firebase} />}>
+            <Route exact path="/first-project-eng/progress" element={<Progress />}>
             </Route>
-            <Route exact path="/first-project-eng/profile" element={<Profile firebase={props.firebase} />}>
+            <Route exact path="/first-project-eng/profile" element={<Profile />}>
             </Route>
           </Routes>
         </div>

@@ -3,13 +3,15 @@ import './SearchedTranslate.css';
 import toUpperCase from '../../../../functionsForComponents/toUpperCase';
 import { AiFillCheckCircle } from "react-icons/ai";
 import { doc, setDoc, getDoc } from 'firebase/firestore';
+import { useSelector } from 'react-redux';
 
 export default function SearchedTranslate(props) {
-  const db = props.firebase;
+
+  const firebase = useSelector(state => state.firebase.firebase)
 
   async function addNewWordToFirebase(tr, e) {
-    let a = await getDoc(doc(db, "users", "user", "appendedwords", props.word));
-    setDoc(doc(db, "users", "user", "appendedwords", props.word), {
+    let a = await getDoc(doc(firebase, "users", "user", "appendedwords", props.word));
+    setDoc(doc(firebase, "users", "user", "appendedwords", props.word), {
       word: props.word,
       translate: a.data() == undefined ? [tr] : [...new Set([...a.data().translate, tr])]
     })

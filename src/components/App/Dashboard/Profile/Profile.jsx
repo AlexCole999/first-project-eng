@@ -6,12 +6,13 @@ import { useDispatch, useSelector } from 'react-redux';
 export default function Profile(props) {
 
   const dispatch = useDispatch()
+  const firebase = useSelector(state => state.firebase.firebase)
   const words = useSelector(state => state.userStatistics.data.words)
   const translates = useSelector(state => state.userStatistics.data.translates)
   useEffect(getData, [])
 
   function getData() {
-    getDocs(collection(props.firebase, "users", "user", "appendedwords"))
+    getDocs(collection(firebase, "users", "user", "appendedwords"))
       .then(x => {
         let count = 0;
         x.docs.forEach(x => count += x.data().translate.length);

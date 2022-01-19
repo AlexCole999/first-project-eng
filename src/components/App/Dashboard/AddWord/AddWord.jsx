@@ -6,14 +6,16 @@ import { getDoc, doc } from 'firebase/firestore';
 import { useSelector, useDispatch } from 'react-redux';
 
 export default function AddWord(props) {
+
   const dispatch = useDispatch();
+  const firebase = useSelector(state => state.firebase.firebase)
   const dataFromTranslatorApi = useSelector(state => state.wordsFromTranslatorAPI.data ? state.wordsFromTranslatorAPI.data.def : [])
   const [wordsInBase, setWordsInBase] = useState([]);
   useEffect(yandexDictionaryRequest, [])
 
   async function some(input) {
     if (input) {
-      let a = await getDoc(doc(props.firebase, "users", "user", "appendedwords", input));
+      let a = await getDoc(doc(firebase, "users", "user", "appendedwords", input));
       a.data() !== undefined ? setWordsInBase(a.data().translate) : setWordsInBase([]);
     }
     else setWordsInBase([])

@@ -17,7 +17,7 @@ export default function App() {
   return (
     <div className="App">
       <Navbar />
-      <Dashboard firebase={firebase} />
+      <Dashboard />
       <Footer />
     </div>
   );
