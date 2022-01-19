@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from 'react';
+import { React, useEffect } from 'react';
 import './MyWords.css';
 import { collection, getDocs } from "firebase/firestore";
 import WordsCouple from './WordsCouple/WordsCouple';
