@@ -4,18 +4,18 @@ import { collection, getDocs } from 'firebase/firestore';
 import { useDispatch, useSelector } from 'react-redux';
 
 export default function Profile(props) {
-  const initialState = 'загрузка...'
-  const [vocabularyLength, setVocabularyLength] = useState(initialState)
-  const [translatesLength, setTranslatesLength] = useState(initialState)
+
+  const dispatch = useDispatch()
+  const words = useSelector(state => state.userStatistics.data.words)
+  const translates = useSelector(state => state.userStatistics.data.translates)
   useEffect(getData, [])
 
   function getData() {
     getDocs(collection(props.firebase, "users", "user", "appendedwords"))
       .then(x => {
-        setVocabularyLength(x.docs.length);
         let count = 0;
         x.docs.forEach(x => count += x.data().translate.length);
-        setTranslatesLength(count);
+        dispatch({ type: "ADD_STATISTICS_DATA", words: x.docs.length, translates: count })
       })
   }
 
@@ -29,10 +29,10 @@ export default function Profile(props) {
               <div>Статистика слов</div>
             </div>
             <div className='statistic-item'>
-              <div>Слов в словаре: </div><div><b>{vocabularyLength}</b></div>
+              <div>Слов в словаре: </div><div><b>{words}</b></div>
             </div>
             <div className='statistic-item'>
-              <div>Переводов слов: </div><div><b>{translatesLength}</b></div>
+              <div>Переводов слов: </div><div><b>{translates}</b></div>
             </div>
           </div>
         </div>

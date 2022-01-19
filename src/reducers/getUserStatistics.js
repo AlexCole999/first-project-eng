@@ -1,7 +1,7 @@
 let defaultstate = {
   data: {
-    words: 0,
-    translates: 0
+    words: "Загрузка...",
+    translates: "Загрузка..."
   }
 }
 const getUserStatistics = (state = defaultstate, action) => {

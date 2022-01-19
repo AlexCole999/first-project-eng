@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 export default function MyWords(props) {
 
   const dispatch = useDispatch();
-  const dataFromFirebase = useSelector(state => state.wordsFromFirebase.data ? state.wordsFromFirebase.data : "")
+  const dataFromFirebase = useSelector(state => state.wordsFromFirebase.data)
   useEffect(getDataFromFirebase, [])
 
   function getDataFromFirebase() {
