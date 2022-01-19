@@ -4,7 +4,7 @@ import { collection, getDocs } from "firebase/firestore";
 import WordsCouple from './WordsCouple/WordsCouple';
 import { useDispatch, useSelector } from 'react-redux';
 
-export default function MyWords(props) {
+export default function MyWords() {
 
   const dispatch = useDispatch();
   const firebase = useSelector(state => state.firebase.firebase)

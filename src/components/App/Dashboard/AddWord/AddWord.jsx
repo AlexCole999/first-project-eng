@@ -5,7 +5,7 @@ import toUpperCase from '../../../functionsForComponents/toUpperCase';
 import { getDoc, doc } from 'firebase/firestore';
 import { useSelector, useDispatch } from 'react-redux';
 
-export default function AddWord(props) {
+export default function AddWord() {
 
   const dispatch = useDispatch();
   const firebase = useSelector(state => state.firebase.firebase)
@@ -50,7 +50,6 @@ export default function AddWord(props) {
         />
         <div className="mainTranslate">
           {dataFromTranslatorApi.length ? `${toUpperCase(dataFromTranslatorApi[0].tr[0].text)}` : "Нет в словаре"}
-          {/* <button style={{ borderRadius: '50%', height: '15px' }} onClick={() => console.log(dataFromTranslatorApi)}></button> */}
         </div>
         <div className="words">
           {dataFromTranslatorApi.length
@@ -59,7 +58,6 @@ export default function AddWord(props) {
               translates={x.tr}
               key={x.pos}
               word={x.text}
-              firebase={props.firebase}
               wordsInBase={wordsInBase} />)
             : <div style={{ fontStyle: 'italic', fontSize: '14px', fontWeight: '400' }}>Других переводов не найдено</div>}
         </div>
