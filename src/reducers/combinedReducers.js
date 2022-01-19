@@ -1,10 +1,12 @@
+import { combineReducers } from 'redux';
 import getWordsFromTranslatorAPI from './getWordsFromTranslatorAPI';
 import getWordsFromFirebaseReducer from './getWordsFromFirebaseReducer';
-import { combineReducers } from 'redux';
+import getUserStatistics from './getUserStatistics';
 
 const combinedReducers = combineReducers({
   wordsFromFirebase: getWordsFromFirebaseReducer,
-  wordsFromTranslatorAPI: getWordsFromTranslatorAPI
+  wordsFromTranslatorAPI: getWordsFromTranslatorAPI,
+  userStatistics: getUserStatistics
 })
 
 export default combinedReducers

@@ -1,9 +1,9 @@
 import { React, useState, useEffect } from 'react';
 import './Profile.css';
 import { collection, getDocs } from 'firebase/firestore';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function Profile(props) {
-
   const initialState = 'загрузка...'
   const [vocabularyLength, setVocabularyLength] = useState(initialState)
   const [translatesLength, setTranslatesLength] = useState(initialState)
