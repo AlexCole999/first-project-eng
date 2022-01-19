@@ -1,8 +1,8 @@
-let defaultstatetwo = { head: {}, def: [] }
-const getWordsFromTranslatorAPI = (state = defaultstatetwo, action) => {
+let defaultstate = { head: {}, def: [] }
+const getWordsFromTranslatorAPI = (state = defaultstate, action) => {
   switch (action.type) {
     case "INCREMENT":
-      return { ...state, count: state.count + 1 }
+      return { ...state, data: action.data }
     default: return state
   }
 }

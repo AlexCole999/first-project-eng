@@ -5,6 +5,7 @@ import WordsCouple from './WordsCouple/WordsCouple';
 import { useDispatch, useSelector } from 'react-redux';
 
 export default function MyWords(props) {
+
   const dispatch = useDispatch();
   const dataFromFirebase = useSelector(state => state.wordsFromFirebase.data ? state.wordsFromFirebase.data : "")
   useEffect(getDataFromFirebase, [])
