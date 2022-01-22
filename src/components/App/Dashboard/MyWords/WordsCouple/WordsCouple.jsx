@@ -2,7 +2,7 @@ import { React } from 'react';
 import './WordsCouple.css';
 import toUpperCase from './../../../../functionsForComponents/toUpperCase';
 import { AiFillCloseCircle } from "react-icons/ai";
-import { getDocs, getDoc, doc, setDoc, collection, deleteDoc } from 'firebase/firestore';
+import { getDocs, doc, setDoc, collection, deleteDoc } from 'firebase/firestore';
 import { useSelector, useDispatch } from 'react-redux';
 
 export default function WordsCouple(props) {
