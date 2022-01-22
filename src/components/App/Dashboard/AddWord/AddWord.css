@@ -26,8 +26,29 @@
   font-size: 18px;
   font-weight: 900;
   outline:none;
+  animation: 2s infinite alternate blinkin;
+}
+@keyframes blinkin {
+  0% {
+    opacity:1
+  }
+  50% {
+    opacity:0.2
+  }
+  100% {
+    opacity:1
+  }
+}
+.pausedAnimation{
+  animation-play-state: paused;
+}
+.runningAnimation{
+  animation-play-state: running;
 }
 .mainTranslate{
   font-weight: bold;
   font-size:25px;
 }
+
+
+

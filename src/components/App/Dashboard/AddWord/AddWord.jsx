@@ -10,6 +10,7 @@ export default function AddWord() {
   const dispatch = useDispatch();
   const firebase = useSelector(state => state.firebase.firebase)
   const dataFromTranslatorApi = useSelector(state => state.wordsFromTranslatorAPI.data ? state.wordsFromTranslatorAPI.data.def : [])
+  const [inputState, setInputState] = useState("");
   const [wordsInBase, setWordsInBase] = useState([]);
   useEffect(yandexDictionaryRequest, [])
 
@@ -39,12 +40,13 @@ export default function AddWord() {
     <div>
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '45px' }}><div style={{ fontSize: "32px", fontWeight: "bold" }}>Поиск слов</div></div>
       <div className="wordSearch">
-        <input placeholder='Введите слово...' className="wordSearch__input"
+        <input placeholder='Введите слово...' className={inputState.length ? `wordSearch__input pausedAnimation` : `wordSearch__input runningAnimation`}
           type="text"
           onChange={
             (e) => {
               some(e.target.value);
               yandexDictionaryRequest(e.target.value);
+              setInputState(e.target.value);
             }
           }
         />
