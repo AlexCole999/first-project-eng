@@ -18,18 +18,14 @@ export default function WordsCouple(props) {
         word: props.word,
         translate: translatedWordsFromFirebase.filter(word => word !== translatedWord)
       })
-      getDocs(collection(firebase, "users", "user", "appendedwords"))
-        .then(collection => {
-          dispatch({ type: "ADD_DATA_FROM_FIREBASE", data: collection.docs });
-        })
     }
     else {
       await deleteDoc(doc(firebase, "users", "user", "appendedwords", props.word));
-      getDocs(collection(firebase, "users", "user", "appendedwords"))
-        .then(collection => {
-          dispatch({ type: "ADD_DATA_FROM_FIREBASE", data: collection.docs });
-        })
     }
+    getDocs(collection(firebase, "users", "user", "appendedwords"))
+      .then(collection => {
+        dispatch({ type: "ADD_DATA_FROM_FIREBASE", data: collection.docs });
+      })
   }
   return (
     <div className="WordsCouple">
