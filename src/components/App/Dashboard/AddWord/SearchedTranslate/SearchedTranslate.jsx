@@ -15,13 +15,11 @@ export default function SearchedTranslate(props) {
       word: props.word,
       translate: a.data() == undefined ? [tr] : [...new Set([...a.data().translate, tr])]
     })
-      .then(x => console.log(props.word, tr, 'added'))
       .then(x => {
         e.target.style.color !== 'green'
           ? e.target.style.color = 'green'
           : e.target.style.color = 'green'
       });
-
   }
 
   ///ФУНКЦИЯ ДЛЯ ЗАПРОСА ДАННЫХ О СЛОВАХ НА СЕРВЕРЕ--->>>
