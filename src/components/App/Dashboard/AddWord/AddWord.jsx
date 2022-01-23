@@ -49,8 +49,6 @@ export default function AddWord() {
               setInputState(e.target.value);
             }
           }
-          onKeyDown={(e) =>
-            e.key == "Enter" ? console.log("enter") : console.log("not enter")}
         />
         <div className="mainTranslate">
           {dataFromTranslatorApi.length ? `${toUpperCase(dataFromTranslatorApi[0].tr[0].text)}` : "Нет в словаре"}
