@@ -14,7 +14,7 @@ export default function AddWord() {
   const [wordsInBase, setWordsInBase] = useState([]);
   useEffect(yandexDictionaryRequest, [])
 
-  async function some(input) {
+  async function checkAppendedWordsInFirebase(input) {
     if (input) {
       let a = await getDoc(doc(firebase, "users", "user", "appendedwords", input));
       a.data() !== undefined ? setWordsInBase(a.data().translate) : setWordsInBase([]);
@@ -44,11 +44,13 @@ export default function AddWord() {
           type="text"
           onChange={
             (e) => {
-              some(e.target.value);
+              checkAppendedWordsInFirebase(e.target.value);
               yandexDictionaryRequest(e.target.value);
               setInputState(e.target.value);
             }
           }
+          onKeyDown={(e) =>
+            e.key == "Enter" ? console.log("enter") : console.log("not enter")}
         />
         <div className="mainTranslate">
           {dataFromTranslatorApi.length ? `${toUpperCase(dataFromTranslatorApi[0].tr[0].text)}` : "Нет в словаре"}
