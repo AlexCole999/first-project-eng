@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import SearchedTranslate from './SearchedTranslate/SearchedTranslate';
 import './AddWord.css';
 import toUpperCase from '../../../functionsForComponents/toUpperCase';
-import { getDoc, doc } from 'firebase/firestore';
+import { getDoc, doc, setDoc } from 'firebase/firestore';
 import { useSelector, useDispatch } from 'react-redux';
 
 export default function AddWord() {
@@ -16,8 +16,8 @@ export default function AddWord() {
 
   async function checkAppendedWordsInFirebase(input) {
     if (input) {
-      let a = await getDoc(doc(firebase, "users", "user", "appendedwords", input));
-      a.data() !== undefined ? setWordsInBase(a.data().translate) : setWordsInBase([]);
+      let dataFromFirebase = await getDoc(doc(firebase, "users", "user", "appendedwords", input));
+      dataFromFirebase.data() !== undefined ? setWordsInBase(dataFromFirebase.data().translate) : setWordsInBase([]);
     }
     else setWordsInBase([])
   }
@@ -36,6 +36,10 @@ export default function AddWord() {
     };
   }
 
+  function enterKeyDown() {
+    console.log(1)
+  }
+
   return (
     <div>
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '45px' }}><div style={{ fontSize: "32px", fontWeight: "bold" }}>Поиск слов</div></div>
@@ -47,6 +51,32 @@ export default function AddWord() {
               checkAppendedWordsInFirebase(e.target.value);
               yandexDictionaryRequest(e.target.value);
               setInputState(e.target.value);
+            }
+          }
+          onKeyDown={
+            async (e) => {
+              if (e.key == "Enter") {
+                console.log(e.key);
+                const dataFromFirebase = await getDoc(doc(firebase, "users", "user", "appendedwords", e.target.value));
+                if (dataFromTranslatorApi[0]) {
+                  if (dataFromFirebase.data() == undefined) {
+                    setDoc(doc(firebase, "users", "user", "appendedwords", e.target.value), {
+                      word: e.target.value,
+                      translate: [dataFromTranslatorApi[0] ? dataFromTranslatorApi[0].tr[0]?.text : false]
+                    })
+                    const newDataFromFirebase = await getDoc(doc(firebase, "users", "user", "appendedwords", e.target.value));
+                    setWordsInBase(newDataFromFirebase.data().translate)
+                  }
+                  else {
+                    setDoc(doc(firebase, "users", "user", "appendedwords", e.target.value), {
+                      word: e.target.value,
+                      translate: [...new Set([...dataFromFirebase.data().translate, dataFromTranslatorApi[0] ? dataFromTranslatorApi[0].tr[0]?.text : false])]
+                    })
+                    const newDataFromFirebase = await getDoc(doc(firebase, "users", "user", "appendedwords", e.target.value));
+                    setWordsInBase(newDataFromFirebase.data().translate)
+                  };
+                }
+              }
             }
           }
         />
