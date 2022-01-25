@@ -32,10 +32,10 @@ export default function AddWord() {
             dispatch({ type: "ADD_DATA_FROM_TRANSLATORAPI", data: x })
           });
       }
-      else {
-        dispatch({ type: "ADD_DATA_FROM_TRANSLATORAPI", data: { def: [] } });
-      };
     }
+    else {
+      dispatch({ type: "ADD_DATA_FROM_TRANSLATORAPI", data: { def: [] } });
+    };
   }
 
   async function enterKeyDown(e) {
