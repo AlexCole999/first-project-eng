@@ -24,22 +24,23 @@ export default function AddWord() {
 
   function yandexDictionaryRequest(input) {
     if (input) {
-      fetch
-        ('https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=\dict.1.1.20210811T164421Z.dc92c34aa55f8bde.11d283af044e951db1e180d89d183eafd3dac943&lang=en-ru&text=' + input)
-        .then(x => x.json())
-        .then(x => {
-          dispatch({ type: "ADD_DATA_FROM_TRANSLATORAPI", data: x })
-        });
+      if (input.match(/\w+$/)) {
+        fetch
+          ('https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=\dict.1.1.20210811T164421Z.dc92c34aa55f8bde.11d283af044e951db1e180d89d183eafd3dac943&lang=en-ru&text=' + input)
+          .then(x => x.json())
+          .then(x => {
+            dispatch({ type: "ADD_DATA_FROM_TRANSLATORAPI", data: x })
+          });
+      }
+      else {
+        dispatch({ type: "ADD_DATA_FROM_TRANSLATORAPI", data: { def: [] } });
+      };
     }
-    else {
-      dispatch({ type: "ADD_DATA_FROM_TRANSLATORAPI", data: { def: [] } });
-    };
   }
 
   async function enterKeyDown(e) {
     if (e.key == "Enter") {
       if (inputState) {
-        console.log(e.key);
         const dataFromFirebase = await getDoc(doc(firebase, "users", "user", "appendedwords", e.target.value));
         if (dataFromTranslatorApi[0]) {
           if (dataFromFirebase.data() == undefined) {
@@ -71,9 +72,9 @@ export default function AddWord() {
           type="text"
           onChange={
             (e) => {
+              setInputState(e.target.value);
               checkAppendedWordsInFirebase(e.target.value);
               yandexDictionaryRequest(e.target.value);
-              setInputState(e.target.value);
             }
           }
           onKeyDown={
