@@ -46,7 +46,7 @@ export default function AddWord() {
           if (dataFromFirebase.data() == undefined) {
             setDoc(doc(firebase, "users", "user", "appendedwords", e.target.value), {
               word: e.target.value,
-              translate: [dataFromTranslatorApi[0] ? dataFromTranslatorApi[0].tr[0]?.text : false]
+              translate: [dataFromTranslatorApi[0] ? dataFromTranslatorApi[0].tr[0].text : false]
             })
             const newDataFromFirebase = await getDoc(doc(firebase, "users", "user", "appendedwords", e.target.value));
             setWordsInBase(newDataFromFirebase.data().translate)
@@ -54,7 +54,7 @@ export default function AddWord() {
           else {
             setDoc(doc(firebase, "users", "user", "appendedwords", e.target.value), {
               word: e.target.value,
-              translate: [...new Set([...dataFromFirebase.data().translate, dataFromTranslatorApi[0] ? dataFromTranslatorApi[0].tr[0]?.text : false])]
+              translate: [...new Set([...dataFromFirebase.data().translate, dataFromTranslatorApi[0] ? dataFromTranslatorApi[0].tr[0].text : false])]
             })
             const newDataFromFirebase = await getDoc(doc(firebase, "users", "user", "appendedwords", e.target.value));
             setWordsInBase(newDataFromFirebase.data().translate)
