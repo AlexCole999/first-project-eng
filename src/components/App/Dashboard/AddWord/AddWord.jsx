@@ -66,7 +66,14 @@ export default function AddWord() {
 
   return (
     <div>
-      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '45px' }}><div style={{ fontSize: "32px", fontWeight: "bold" }}>Поиск слов</div></div>
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '45px', flexDirection: 'column' }}>
+        <div style={{ fontSize: "32px", fontWeight: "bold" }}>
+          Поиск слов
+        </div>
+        <div style={{ fontStyle: 'italic', fontSize: "15px" }}>
+          быстрое добавление : enter
+        </div>
+      </div>
       <div className="wordSearch">
         <input placeholder='Введите слово...' className={inputState.length ? `wordSearch__input pausedAnimation` : `wordSearch__input runningAnimation`}
           type="text"
