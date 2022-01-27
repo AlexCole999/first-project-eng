@@ -1,16 +1,17 @@
 .Instruction{
-  
+  display: flex;
+  flex-direction: column;
 }
 .Instruction-wrapper{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .Instruction-elements{
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   gap:35px;
-  flex-direction: column;
+  flex-direction: column; 
 }
 .Instruction-row{
   display: flex;
