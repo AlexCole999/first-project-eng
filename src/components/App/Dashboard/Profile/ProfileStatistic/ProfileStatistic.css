@@ -1,0 +1,19 @@
+.table-wrapper{
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+.Profile-table{
+  padding: 15px;
+  width: 350px;
+  border-radius: 5px;
+  background: linear-gradient(135deg,#3030308e,#494949a6);
+  border-top:1px solid rgba(255, 255, 255, 0.5);
+  border-left:1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 2px 2px 2px 0px rgb(163, 163, 163);
+}
+.statistic-item{ 
+  display: flex; 
+  justify-content: space-between;
+  margin: 15px 0px 0px 0px;
+}

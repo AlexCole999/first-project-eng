@@ -7,7 +7,6 @@ import Profile from './Profile/Profile';
 import Progress from './Progress/Progress';
 import Instruction from './Instruction/Instruction';
 
-
 export default function Dashboard() {
   return (
     <div className="dashboard-container">

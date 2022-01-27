@@ -1,12 +1,18 @@
 .Instruction{
+  
+}
+.Instruction-wrapper{
+  display: flex;
+  justify-content: space-between;
+}
+.Instruction-elements{
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   gap:35px;
   flex-direction: column;
 }
-
-.Instruction-elem{
+.Instruction-row{
   display: flex;
   justify-content: flex-start;
   align-items: center;
