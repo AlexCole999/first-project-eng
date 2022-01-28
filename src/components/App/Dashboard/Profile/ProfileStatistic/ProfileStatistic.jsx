@@ -42,6 +42,7 @@ export default function ProfileStatistic() {
             <div>Переводов слов: </div><div><b>{translates}</b></div>
           </div>
         </div>
+        <button style={{ width: '100px', height: '50px' }}></button>
       </div>
     </div>
   )
