@@ -27,22 +27,22 @@ export default function ProfileStatistic() {
             <div>Аккаунт</div>
           </div>
           <div className='statistic-item'>
-            <div>Имя аккаунта </div><div><b>somename</b></div>
+            <div>Имя аккаунта </div><div><b><i>somename</i></b></div>
           </div>
           <div className='statistic-item'>
-            <div>Тип аккаунта</div><div><b>google\facebook\github</b></div>
+            <div>Тип аккаунта</div><div><b><i>Google</i></b></div>
           </div>
           <div style={{ display: 'flex', justifyContent: 'center', fontWeight: '700', fontSize: '18px', marginTop: '15px' }}>
             <div>Статистика слов</div>
           </div>
           <div className='statistic-item'>
-            <div>Слов в словаре: </div><div><b>{words}</b></div>
+            <div>Слов в словаре: </div><div><b><i>{words}</i></b></div>
           </div>
           <div className='statistic-item'>
-            <div>Переводов слов: </div><div><b>{translates}</b></div>
+            <div>Переводов слов: </div><div><b><i>{translates}</i></b></div>
           </div>
         </div>
-        <button style={{ width: '100px', height: '50px' }}></button>
+        <div className='authButtonContainer'><button className='authButton'>Войти через гугл-аккаунт</button></div>
       </div>
     </div>
   )
