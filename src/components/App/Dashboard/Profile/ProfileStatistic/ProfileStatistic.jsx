@@ -2,8 +2,12 @@ import { React, useEffect } from 'react';
 import './ProfileStatistic.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { getDocs, collection } from 'firebase/firestore';
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 export default function ProfileStatistic() {
+
+  const provider = new GoogleAuthProvider();
+  const auth = getAuth();
 
   const dispatch = useDispatch()
   const firebase = useSelector(state => state.firebase.firebase)
@@ -11,6 +15,30 @@ export default function ProfileStatistic() {
   const translates = useSelector(state => state.userStatistics.data.translates)
   useEffect(getData, [])
 
+
+  function signInWithGoogleAuth() {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        // The signed-in user info.
+        const user = result.user;
+        console.log(credential)
+        console.log(token)
+        console.log(user)
+        // ...
+      }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.email;
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // ...
+      });
+  }
   function getData() {
     getDocs(collection(firebase, "users", "user", "appendedwords"))
       .then(x => {
@@ -42,7 +70,13 @@ export default function ProfileStatistic() {
             <div>Переводов слов: </div><div><b><i>{translates}</i></b></div>
           </div>
         </div>
-        <div className='authButtonContainer'><button className='authButton'>Войти через гугл-аккаунт</button></div>
+        <div className='authButtonContainer'>
+          <button
+            className='authButton'
+            onClick={signInWithGoogleAuth}>
+            Войти через гугл-аккаунт
+          </button>
+        </div>
       </div>
     </div>
   )
